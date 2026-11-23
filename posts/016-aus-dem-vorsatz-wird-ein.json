@@ -1,0 +1,35 @@
+{
+  "nr": 16,
+  "format": "Zum Speichern",
+  "titel": "Aus dem Vorsatz wird ein Plan",
+  "stempel": "spart ca. 20 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "„Dieses Jahr werde ich organisierter.“ Im Februar ist der Vorsatz vergessen, weil nie klar war, was du am Montag anders machst."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe macht das Ziel greifbar"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Ein Ziel reicht. Drei Ziele sind keins.",
+        "Trag die ersten drei Schritte sofort in den Kalender ein.",
+        "Nach vier Wochen: Plan einfügen und anpassen lassen."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Mache aus meinem Ziel einen Plan für die nächsten zwölf Wochen. Zerlege es in höchstens vier Etappen mit je einem überprüfbaren Ergebnis. Nenne für die erste Woche drei konkrete Schritte von höchstens 30 Minuten. Frage nach, wenn das Ziel zu vage ist.\n\nMein Ziel: [hier eintragen]\n\nZeit pro Woche: [Stunden]",
+  "caption": "Vorsätze scheitern selten am Willen und meistens am Montag. Diese Eingabe macht aus einem Ziel zwölf Wochen mit konkreten ersten Schritten.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-28"
+}

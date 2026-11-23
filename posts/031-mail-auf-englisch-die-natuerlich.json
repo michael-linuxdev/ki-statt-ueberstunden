@@ -1,0 +1,35 @@
+{
+  "nr": 31,
+  "format": "Zum Speichern",
+  "titel": "Mail auf Englisch, die natürlich klingt",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Auf Deutsch schreibst du die Mail in zwei Minuten. Auf Englisch brauchst du zwanzig und bist dir beim Ton trotzdem nicht sicher."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe übersetzt mit Gefühl für den Ton"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Schreib zuerst auf Deutsch, das geht schneller.",
+        "Sag dazu, ob britisches oder amerikanisches Englisch.",
+        "Aus den Erklärungen lernst du nebenbei."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Übersetze meine E-Mail ins Englische, so wie man sie im Geschäftsleben schreibt: höflich, klar, nicht steif. Behalte Inhalt und Reihenfolge bei. Erkläre mir danach auf Deutsch zwei Formulierungen, die du anders gewählt hast als in einer wörtlichen Übersetzung.\n\nMeine E-Mail: [hier einfügen, ohne Namen]",
+  "caption": "Englische Mails kosten dich dreimal so lange? Schreib auf Deutsch und lass übersetzen, mit Erklärung, warum es im Englischen anders heißt.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-01"
+}

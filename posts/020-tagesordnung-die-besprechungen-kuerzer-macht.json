@@ -1,0 +1,35 @@
+{
+  "nr": 20,
+  "format": "Zum Speichern",
+  "titel": "Tagesordnung, die Besprechungen kürzer macht",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Die Besprechung hat kein Ziel, also dauert sie eine Stunde. Am Ende wurde über alles geredet und nichts entschieden."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe plant die Besprechung"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Verschicke die Tagesordnung am Vortag.",
+        "Punkte ohne Entscheidung passen oft in eine Mail.",
+        "Kombiniere das mit der Protokoll-Eingabe."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Erstelle eine Tagesordnung für eine Besprechung von [Dauer] Minuten. Formuliere jeden Punkt als Frage, die am Ende beantwortet sein soll, mit Zeitangabe und Ziel: informieren, beraten oder entscheiden. Plane fünf Minuten für Aufgaben und nächste Schritte ein.\n\nThemen: [hier einfügen]\n\nTeilnehmende: [Rollen, keine Namen]",
+  "caption": "Eine Stunde Besprechung und kein Ergebnis? Das liegt fast immer an der Tagesordnung. Diese Eingabe baut eine, bei der am Ende Entscheidungen stehen.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-06"
+}

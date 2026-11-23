@@ -1,0 +1,35 @@
+{
+  "nr": 19,
+  "format": "Zum Speichern",
+  "titel": "Excel-Formel in Worten bestellen",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Du weißt genau, was die Tabelle ausrechnen soll. Du weißt nur nicht, wie die Formel heißt, und suchst eine Viertelstunde im Netz."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe liefert die Formel"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Beschreibe die Spalten, statt echte Daten einzufügen.",
+        "Rechne ein Beispiel von Hand nach.",
+        "Fehlermeldung? Kopiere sie in den Chat und frag nach."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe mir eine Formel für die deutsche Excel-Version. Erkläre danach in zwei Sätzen, was sie tut, und nenne einen Testwert, mit dem ich das Ergebnis prüfen kann.\n\nMeine Tabelle: [z. B. Spalte A Datum, Spalte B Betrag, Spalte C Kategorie]\n\nIch möchte: [z. B. die Summe aller Beträge einer Kategorie im Januar]",
+  "caption": "Du weißt, was Excel ausrechnen soll, aber nicht, wie die Formel heißt? Beschreib es in Worten, den Rest erledigt diese Eingabe.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-04"
+}

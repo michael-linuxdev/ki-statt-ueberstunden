@@ -4,12 +4,32 @@
   "titel": "Aus Stichpunkten wird ein fertiges Protokoll",
   "stempel": "spart ca. 20 Min.",
   "slides": [
-    {"typ": "cover"},
-    {"typ": "text", "kopf": "Das kennst du", "text": "Die Besprechung dauert eine Stunde. Das Protokoll danach noch einmal eine halbe, und am Ende fragt trotzdem jemand, wer was bis wann erledigen sollte."},
-    {"typ": "eingabe", "kopf": "Diese Eingabe ordnet deine Notizen"},
-    {"typ": "liste", "kopf": "So klappt es zuverlässig", "punkte": ["Tippe oder diktiere die Stichpunkte direkt nach der Besprechung.", "Ersetze Namen durch Kürzel, wenn es vertraulich ist.", "Prüfe die Aufgabenliste, bevor du das Protokoll verschickst."]},
-    {"typ": "schluss"}
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Die Besprechung dauert eine Stunde. Das Protokoll danach noch einmal eine halbe, und am Ende fragt trotzdem jemand, wer was bis wann erledigen sollte."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe ordnet deine Notizen"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es zuverlässig",
+      "punkte": [
+        "Tippe oder diktiere die Stichpunkte direkt nach der Besprechung.",
+        "Ersetze Namen durch Kürzel, wenn es vertraulich ist.",
+        "Prüfe die Aufgabenliste, bevor du das Protokoll verschickst."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
   ],
   "eingabe": "Mache aus meinen Stichpunkten ein Besprechungsprotokoll. Gliederung: 1. Beschlüsse, 2. Aufgaben als Tabelle mit Wer, Was, Bis wann, 3. Offene Punkte. Erfinde nichts dazu. Wo etwas unklar ist oder ein Termin fehlt, schreibe „bitte klären“.\n\nMeine Stichpunkte: [hier einfügen]",
-  "caption": "Protokoll schreiben ist die Aufgabe, die nach jeder Besprechung liegen bleibt. Mit dieser Eingabe wird aus deinen Stichpunkten in zwei Minuten ein sauberes Protokoll mit Aufgabenliste.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#protokoll #büroalltag #kiimbüro #assistenz #zeitsparen"
+  "caption": "Protokoll schreiben ist die Aufgabe, die nach jeder Besprechung liegen bleibt. Mit dieser Eingabe wird aus deinen Stichpunkten in zwei Minuten ein sauberes Protokoll mit Aufgabenliste.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#protokoll #büroalltag #kiimbüro #assistenz #zeitsparen",
+  "datum": "2026-11-25"
 }

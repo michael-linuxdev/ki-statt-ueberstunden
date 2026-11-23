@@ -1,0 +1,38 @@
+{
+  "nr": 12,
+  "format": "Kurz erklärt",
+  "titel": "Vier Bausteine für eine gute Eingabe",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Das gehört hinein",
+      "punkte": [
+        "Rolle: Wer soll antworten?",
+        "Aufgabe: Was genau soll entstehen?",
+        "Angaben: Was muss die KI dafür wissen?",
+        "Form: Wie lang, welcher Ton, welche Gliederung?"
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Vorher und nachher",
+      "text": "Aus „Schreib eine Mail an den Kunden“ wird: „Du bist meine Kollegin im Vertrieb. Schreibe eine Absage in 80 Wörtern, freundlich, per Sie. Grund: Der Liefertermin ist nicht machbar.“"
+    },
+    {
+      "typ": "text",
+      "kopf": "Warum sich das lohnt",
+      "text": "Je genauer die Bestellung, desto weniger musst du nachbessern. Eine Minute mehr beim Schreiben spart zehn beim Korrigieren."
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Rolle, Aufgabe, Angaben, Form.",
+  "eingabe": "",
+  "caption": "Die KI liefert nur Mittelmaß? Dann fehlt meistens einer von vier Bausteinen in deiner Eingabe. Hier sind sie.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2026-12-18"
+}

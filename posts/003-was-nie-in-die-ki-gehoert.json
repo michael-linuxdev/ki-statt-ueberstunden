@@ -4,12 +4,39 @@
   "titel": "Was nie in ein KI-Fenster gehört",
   "stempel": "erst prüfen",
   "slides": [
-    {"typ": "cover"},
-    {"typ": "liste", "kopf": "Das bleibt draußen", "punkte": ["Namen, Adressen und Geburtsdaten von Kunden und Kollegen", "Gehälter, Krankmeldungen und Bewerbungen", "Passwörter und Zugangsdaten", "Verträge und Zahlen, die vertraulich sind"]},
-    {"typ": "liste", "kopf": "So geht es trotzdem", "punkte": ["Ersetze Namen durch Platzhalter wie „Kunde A“.", "Füge nur den Abschnitt ein, um den es geht.", "Runde Zahlen oder lass sie weg."]},
-    {"typ": "text", "kopf": "Vorher klären", "text": "Welche KI-Werkzeuge hat deine Firma freigegeben? Frag nach, bevor du ein privates Konto für Firmendaten nutzt."},
-    {"typ": "schluss"}
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Das bleibt draußen",
+      "punkte": [
+        "Namen, Adressen und Geburtsdaten von Kunden und Kollegen",
+        "Gehälter, Krankmeldungen und Bewerbungen",
+        "Passwörter und Zugangsdaten",
+        "Verträge und Zahlen, die vertraulich sind"
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "So geht es trotzdem",
+      "punkte": [
+        "Ersetze Namen durch Platzhalter wie „Kunde A“.",
+        "Füge nur den Abschnitt ein, um den es geht.",
+        "Runde Zahlen oder lass sie weg."
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Vorher klären",
+      "text": "Welche KI-Werkzeuge hat deine Firma freigegeben? Frag nach, bevor du ein privates Konto für Firmendaten nutzt."
+    },
+    {
+      "typ": "schluss"
+    }
   ],
   "eingabe": "",
-  "caption": "Schnell die Kundenmail in die KI kopiert, und schon sind Name, Adresse und Vertragsnummer außer Haus. Diese vier Dinge bleiben draußen, und so arbeitest du trotzdem mit KI.\n\nSchick das jemandem, der alles einfügt.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch"
+  "caption": "Schnell die Kundenmail in die KI kopiert, und schon sind Name, Adresse und Vertragsnummer außer Haus. Diese vier Dinge bleiben draußen, und so arbeitest du trotzdem mit KI.\n\nSchick das jemandem, der alles einfügt.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2026-11-27",
+  "schluss": "Schick das jemandem, der alles einfügt."
 }

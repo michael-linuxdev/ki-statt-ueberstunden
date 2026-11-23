@@ -1,0 +1,34 @@
+{
+  "nr": 24,
+  "format": "Kurz erklärt",
+  "titel": "Fünf Sätze, die jede Antwort verbessern",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Nicht neu anfangen",
+      "text": "Die erste Antwort ist ein Entwurf. Statt alles neu einzugeben, sagst du der KI einfach, was dich stört. Sie kennt den bisherigen Verlauf."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Diese Sätze helfen",
+      "punkte": [
+        "„Kürzer, höchstens fünf Sätze.“",
+        "„Weniger förmlich, so wie ich mit Kollegen rede.“",
+        "„Lass den zweiten Absatz weg.“",
+        "„Gib mir drei Varianten für den ersten Satz.“",
+        "„Was fehlt dir, um das besser zu machen?“"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Nachbessern geht schneller als neu schreiben.",
+  "eingabe": "",
+  "caption": "Die erste Antwort passt nicht? Fang nicht von vorn an. Mit diesen fünf Sätzen wird aus dem Entwurf, was du brauchst.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2027-01-15"
+}

@@ -1,0 +1,35 @@
+{
+  "nr": 13,
+  "format": "Zum Speichern",
+  "titel": "Dein Arbeitsjahr auf einer Seite",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Was habe ich dieses Jahr eigentlich geschafft? Im Dezember fällt dir nur der November ein, und im Jahresgespräch fehlen dir die Beispiele."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe sortiert dein Jahr"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Blättere vorher durch Kalender und gesendete Mails.",
+        "Zahlen und Beispiele überzeugen mehr als Adjektive.",
+        "Heb die Liste fürs Jahresgespräch auf."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Hilf mir, mein Arbeitsjahr zusammenzufassen. Ordne meine Stichpunkte in: 1. Erreichte Ergebnisse, möglichst mit Zahl oder Beispiel, 2. Was ich neu gelernt habe, 3. Was nicht gut lief und was ich daraus mitnehme. Stelle mir am Ende drei Fragen, die helfen, Vergessenes zu finden.\n\nMeine Stichpunkte: [hier einfügen]",
+  "caption": "Was hast du dieses Jahr geschafft? Mehr, als dir im Dezember einfällt. Diese Eingabe macht aus Stichpunkten einen Rückblick, den du im Jahresgespräch brauchen kannst.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-21"
+}

@@ -1,0 +1,37 @@
+{
+  "nr": 33,
+  "format": "Darf ich das im Büro?",
+  "titel": "Die KI hat es geschrieben. Wer ist verantwortlich?",
+  "stempel": "erst prüfen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Die kurze Antwort",
+      "text": "Du. Wer eine Mail abschickt oder ein Dokument weitergibt, steht für den Inhalt ein. Egal, wer den Entwurf geschrieben hat."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Deshalb vor dem Absenden",
+      "punkte": [
+        "Stimmen Zahlen, Fristen und Namen?",
+        "Steht eine Zusage drin, die du nicht geben darfst?",
+        "Sind Daten enthalten, die der Empfänger nicht sehen soll?"
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Verträge, Kündigungen, Rechtsfragen",
+      "text": "Hier reicht Gegenlesen nicht. Das gehört zu jemandem, der sich fachlich auskennt."
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Abschicken heißt: dafür einstehen.",
+  "eingabe": "",
+  "caption": "„Das hat die KI geschrieben“ ist keine Ausrede. Wer abschickt, steht dafür ein. Darauf solltest du vor dem Absenden achten.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2027-02-05"
+}

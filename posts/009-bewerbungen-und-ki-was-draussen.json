@@ -1,0 +1,42 @@
+{
+  "nr": 9,
+  "format": "Darf ich das im Büro?",
+  "titel": "Bewerbungen und KI: was draußen bleibt",
+  "stempel": "erst prüfen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Das gehört nicht in die KI",
+      "punkte": [
+        "Lebensläufe und Anschreiben mit Namen",
+        "Zeugnisse und Beurteilungen",
+        "Notizen aus Vorstellungsgesprächen",
+        "Fotos von Bewerbern"
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Der Grund",
+      "text": "Bewerbungsunterlagen sind sehr persönlich. Die Menschen haben sie eurer Firma anvertraut, nicht einem KI-Anbieter."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Dabei darf die KI helfen",
+      "punkte": [
+        "Stellenanzeige formulieren",
+        "Fragen fürs Gespräch vorbereiten",
+        "Absage als Vorlage schreiben, ohne Namen"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Die Auswahl treffen Menschen.",
+  "eingabe": "",
+  "caption": "Schnell den Lebenslauf zusammenfassen lassen? Bei Bewerbungen ist das keine gute Idee. Das bleibt draußen, und dabei darf die KI trotzdem helfen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2026-12-11"
+}

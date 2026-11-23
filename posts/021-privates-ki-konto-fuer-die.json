@@ -1,0 +1,41 @@
+{
+  "nr": 21,
+  "format": "Darf ich das im Büro?",
+  "titel": "Privates KI-Konto für die Arbeit?",
+  "stempel": "erst prüfen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Darum geht es",
+      "text": "Das Firmenwerkzeug fehlt oder ist umständlich, also nimmst du dein privates Konto. Dann liegen Firmendaten in einem Konto, von dem die Firma nichts weiß."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Drei Fragen vorher",
+      "punkte": [
+        "Gibt es eine Regel oder ein freigegebenes Werkzeug?",
+        "Würde ich diesen Text auch auf eine Postkarte schreiben?",
+        "Was passiert mit dem Verlauf, wenn ich die Firma verlasse?"
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "Das geht fast immer",
+      "punkte": [
+        "Allgemeine Formulierungen ohne Firmendaten",
+        "Vorlagen mit Platzhaltern",
+        "Erklärungen zu Excel, Word und Co."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Im Zweifel erst fragen.",
+  "eingabe": "",
+  "caption": "Mit dem privaten KI-Konto schnell etwas für die Arbeit erledigen? Stell dir vorher diese drei Fragen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2027-01-08"
+}

@@ -1,0 +1,42 @@
+{
+  "nr": 6,
+  "format": "Kurz erklärt",
+  "titel": "Warum die KI manchmal Dinge erfindet",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das steckt dahinter",
+      "text": "Ein Sprachmodell berechnet, welche Wörter wahrscheinlich aufeinander folgen. Ob ein Satz stimmt, weiß es nicht. Meist passt das Ergebnis. Manchmal klingt es nur so."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Hier irrt sie besonders oft",
+      "punkte": [
+        "Zahlen, Daten und Paragrafen",
+        "Quellen und Zitate",
+        "Namen von Personen und Firmen",
+        "Details zu deinem eigenen Betrieb"
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "So fängst du es ab",
+      "punkte": [
+        "Frag nach der Quelle und öffne sie selbst.",
+        "Schreib dazu: „Wenn du es nicht weißt, sag es.“",
+        "Prüfe alles, was du weitergibst."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Klingt sicher heißt nicht: stimmt.",
+  "eingabe": "",
+  "caption": "Die Antwort klingt überzeugend und ist trotzdem falsch? Das hat einen einfachen Grund, und mit drei Handgriffen fängst du es ab.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2026-12-04"
+}

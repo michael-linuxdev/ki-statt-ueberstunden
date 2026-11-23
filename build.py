@@ -4,6 +4,7 @@
 Aufruf:  python3 build.py
 Braucht: playwright (Python) und einen Chrome/Chromium.
 """
+import datetime
 import html
 import json
 import shutil
@@ -64,7 +65,7 @@ li::before {{ content: ""; position: absolute; left: 4px; top: 44px; width: 34px
 .zettel {{ border-left: 10px solid {MARKER}; padding: 6px 0 6px 38px; }}
 .zettel p {{ font-size: 39px; line-height: 1.5; font-weight: 500; margin-bottom: 44px; }}
 .zettel p:last-child {{ margin-bottom: 0; }}
-.stempel {{ position: absolute; right: 90px; bottom: 230px; transform: rotate(-7deg); color: {STEMPEL};
+.stempel {{ align-self: flex-end; margin: 70px 10px 0 0; transform: rotate(-7deg); color: {STEMPEL};
   border: 7px solid {STEMPEL}; border-radius: 14px; padding: 18px 34px; font-family: Bitter, serif;
   font-weight: 800; font-size: 54px; opacity: .92; }}
 .stempel small {{ display: block; font-family: Fira, sans-serif; font-size: 26px; font-weight: 500; }}
@@ -82,8 +83,8 @@ def slide_html(post, slide, i, n, basis):
     typ = slide["typ"]
     stempel = ""
     if typ == "cover":
-        inhalt = f"<h1><span>{e(post['titel'])}</span></h1>"
-        stempel = f"<div class='stempel'><small>Nr. {post['nr']}</small>{e(post['stempel'])}</div>"
+        inhalt = (f"<h1><span>{e(post['titel'])}</span></h1>"
+                  f"<div class='stempel'><small>Nr. {post['nr']}</small>{e(post['stempel'])}</div>")
     elif typ == "text":
         inhalt = f"<h2>{e(slide['kopf'])}</h2><div class='text'>{absatz(slide['text'])}</div>"
     elif typ == "liste":
@@ -100,8 +101,8 @@ def slide_html(post, slide, i, n, basis):
                       f"<li>Halte den Finger auf den Text und wähle „Kopieren“.</li></ol>"
                       f"<p class='hinweis'>Speichere den Beitrag, damit du ihn wiederfindest.</p>")
         else:
-            inhalt = ("<div class='schluss'><span>Schick das jemandem, der alles einfügt.</span></div>"
-                      "<p>Mehr KI fürs Büro, ehrlich getestet:<br>folge @" + KANAL + "</p>")
+            inhalt = (f"<div class='schluss'><span>{e(post.get('schluss', 'Speichern und weitersagen.'))}</span></div>"
+                      "<p>Mehr KI fürs Büro, ehrlich erklärt:<br>folge @" + KANAL + "</p>")
     else:
         raise ValueError(f"Unbekannter Folientyp: {typ}")
     weiter = "weiterwischen" if i < n else ""
@@ -204,26 +205,98 @@ und prüfe jedes Ergebnis, bevor du es verwendest.</p>
                  "Fertige KI-Eingaben für den Büroalltag zum Kopieren.")
 
 
+WOCHENTAGE = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+
+
+def tag(iso):
+    d = datetime.date.fromisoformat(iso)
+    return f"{WOCHENTAGE[d.weekday()]}, {d.day}.{d.month}.{d.year}"
+
+
+STUDIO_JS = """
+const heute = new Date().toLocaleDateString('sv');
+let fertig = [];
+try { fertig = JSON.parse(localStorage.getItem('gepostet') || '[]'); } catch {}
+const alle = [...document.querySelectorAll('details[data-datum]')];
+function zeichne() {
+  let naechster = null;
+  for (const d of alle) {
+    const ok = fertig.includes(d.dataset.nr);
+    d.classList.toggle('fertig', ok);
+    d.querySelector('[data-haken]').textContent = ok ? 'Doch nicht gepostet' : 'Als gepostet markieren';
+    if (!ok && !naechster) naechster = d;
+  }
+  alle.forEach(d => d.classList.toggle('dran', d === naechster));
+  const kopf = document.getElementById('dran');
+  if (!naechster) { kopf.textContent = 'Alles gepostet. Zeit für neue Beiträge.'; return; }
+  const faellig = naechster.dataset.datum <= heute ? 'Jetzt dran' : 'Als Nächstes';
+  kopf.innerHTML = '';
+  const a = document.createElement('a');
+  a.href = '#p' + naechster.dataset.nr;
+  a.textContent = faellig + ': ' + naechster.dataset.tag + ', Nr. ' + naechster.dataset.nr;
+  a.addEventListener('click', () => { naechster.open = true; });
+  kopf.append(a);
+}
+document.addEventListener('click', (ev) => {
+  const h = ev.target.closest('[data-haken]');
+  if (!h) return;
+  const nr = h.closest('details').dataset.nr;
+  fertig = fertig.includes(nr) ? fertig.filter(x => x !== nr) : [...fertig, nr];
+  try { localStorage.setItem('gepostet', JSON.stringify(fertig)); } catch {}
+  zeichne();
+});
+zeichne();
+const offen = alle.find(d => d.classList.contains('dran'));
+if (offen) offen.open = true;
+"""
+
+STUDIO_CSS = f"""
+#dran {{ font-family: Bitter, serif; font-weight: 800; font-size: 24px; background: {MARKER}; padding: 14px 16px; margin: 18px 0 0; }}
+details {{ border-top: 3px solid {TINTE}; padding: 14px 0; }}
+details:first-of-type {{ margin-top: 26px; }}
+summary {{ cursor: pointer; display: grid; grid-template-columns: 7.2em 1fr; gap: 4px 10px; min-height: 44px; align-items: center; }}
+summary small {{ font-size: 16px; font-weight: 500; }}
+summary b {{ font-family: Bitter, serif; font-weight: 800; font-size: 19px; line-height: 1.25; }}
+details.fertig summary {{ opacity: .45; text-decoration: line-through; }}
+details.dran summary b {{ background: {MARKER}; padding: 0 4px; }}
+details .meta {{ margin-top: 14px; }}
+button.leer {{ background: none; color: {TINTE}; border: 2px solid {TINTE}; }}
+"""
+
+
 def studio_html(posts):
-    teile = ["""<header><p>Nur für dich</p><h1><span>Studio</span></h1>
-<p>Bilder aufs Handy holen, Text kopieren, in Instagram als Karussell posten.</p></header>"""]
-    for p in sorted(posts, key=lambda p: -p["nr"]):
+    teile = ["""<header><p>Nur für dich</p><h1><span>Redaktionsplan</span></h1>
+<p>Montag, Mittwoch, Freitag. Bilder sichern, Text kopieren, in Instagram als Karussell posten, abhaken.</p>
+<p id="dran"></p></header>"""]
+    for p in sorted(posts, key=lambda p: p["datum"]):
         n = len(p["slides"])
         ordner = f"slides/{p['nr']:03d}"
         bilder = "".join(f'<a href="{ordner}/{i}.png" download="{p["nr"]:03d}-{i}.png">'
                          f'<img src="{ordner}/{i}.png" alt="Bild {i} von {n}" loading="lazy"></a>'
                          for i in range(1, n + 1))
         urls = ",".join(f"{ordner}/{i}.png" for i in range(1, n + 1))
-        teile.append(f"""<article>
+        teile.append(f"""<details id="p{p['nr']}" data-nr="{p['nr']}" data-datum="{p['datum']}" data-tag="{tag(p['datum'])}">
+<summary><small>{tag(p['datum'])}</small><b>{e(p['titel'])}</b></summary>
 <div class="meta"><span>Nr. {p['nr']}, {e(p['format'])}</span><span>{n} Bilder</span></div>
-<h2>{e(p['titel'])}</h2>
 <div class="reihe">{bilder}</div>
 <div class="knoepfe"><button data-teile="{urls}">Alle Bilder teilen oder sichern</button>
-<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button></div>
-<pre id="c{p['nr']}">{e(p['caption'])}</pre></article>""")
+<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button>
+<button class="leer" data-haken>Als gepostet markieren</button></div>
+<pre id="c{p['nr']}">{e(p['caption'])}</pre></details>""")
     teile.append('<footer><p><a href="profilbild.png" download>Profilbild herunterladen</a></p></footer>')
-    return seite("Studio", "".join(teile), "Interne Galerie").replace(
-        "<title>", '<meta name="robots" content="noindex"><title>')
+    return (seite("Redaktionsplan", "".join(teile), "Interner Redaktionsplan")
+            .replace("<title>", '<meta name="robots" content="noindex"><title>')
+            .replace("</style></head>", STUDIO_CSS + "</style></head>")
+            .replace("</script></body>", STUDIO_JS + "</script></body>"))
+
+
+def plan_md(posts):
+    zeilen = ["# Redaktionsplan", "", "Rhythmus: Montag, Mittwoch, Freitag. Mo und Mi eine Eingabe zum Speichern,",
+              "Fr im Wechsel „Darf ich das im Büro?“ und „Kurz erklärt“.", "",
+              "| Datum | Nr. | Format | Titel |", "|---|---|---|---|"]
+    zeilen += [f"| {tag(p['datum'])} | {p['nr']} | {p['format']} | {p['titel']} |"
+               for p in sorted(posts, key=lambda p: p["datum"])]
+    return "\n".join(zeilen) + "\n"
 
 
 def main():
@@ -242,16 +315,24 @@ def main():
             browser = pw.chromium.launch(channel="chrome")
         page = browser.new_page(viewport={"width": 1080, "height": 1350})
 
+        zu_lang = []
+
         def render(markup, ziel):
             quelle = Path(tmp) / "slide.html"
             quelle.write_text(markup, encoding="utf-8")
             page.goto(quelle.as_uri())
             page.evaluate("document.fonts.ready")
+            # Überschrift auf dem Titelbild verkleinern, bis das längste Wort in die Breite passt
+            page.evaluate(
+                "(() => { const h = document.querySelector('h1'); if (!h) return;"
+                " const r = document.querySelector('.inhalt').getBoundingClientRect();"
+                " for (const g of [112, 104, 96, 88, 80]) { h.style.fontSize = g + 'px';"
+                " if (![...h.querySelector('span').getClientRects()].some(c => c.right > r.right + 16)) break; } })()")
             zu_hoch = page.evaluate(
                 "(() => { const i = document.querySelector('.inhalt');"
-                " return i ? i.scrollHeight > i.clientHeight + 1 : false; })()")
+                " if (!i) return false; const r = i.getBoundingClientRect(); const breit = [...i.querySelectorAll('h1 span, h2, p, li')].some(x => [...x.getClientRects()].some(c => c.right > r.right + 16)); return breit || i.scrollHeight > i.clientHeight + 1; })()")
             if zu_hoch:
-                raise SystemExit(f"Text passt nicht auf das Bild: {ziel}. Bitte kürzen.")
+                zu_lang.append(str(ziel.relative_to(DOCS)))
             ziel.parent.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(ziel))
 
@@ -262,9 +343,12 @@ def main():
         page.set_viewport_size({"width": 1080, "height": 1080})
         render(PROFIL_HTML.format(fonts=font_css(basis), tinte=TINTE, marker=MARKER), DOCS / "profilbild.png")
         browser.close()
+    if zu_lang:
+        raise SystemExit("Text passt nicht auf diese Bilder, bitte kürzen:\n" + "\n".join(zu_lang))
 
     (DOCS / "index.html").write_text(index_html(posts), encoding="utf-8")
     (DOCS / "studio.html").write_text(studio_html(posts), encoding="utf-8")
+    (ROOT / "REDAKTIONSPLAN.md").write_text(plan_md(posts), encoding="utf-8")
     (DOCS / "CNAME").write_text(DOMAIN + "\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     print(f"{len(posts)} Beiträge gebaut.")

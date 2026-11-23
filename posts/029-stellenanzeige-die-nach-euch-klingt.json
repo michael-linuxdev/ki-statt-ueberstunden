@@ -1,0 +1,35 @@
+{
+  "nr": 29,
+  "format": "Zum Speichern",
+  "titel": "Stellenanzeige, die nach euch klingt",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "„Wir suchen ab sofort eine motivierte Fachkraft für unser dynamisches Team.“ So sucht jeder, und deshalb meldet sich niemand."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe schreibt die Anzeige"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Arbeitszeit und Gehaltsspanne zu nennen hilft.",
+        "Frag jemanden im Team, was die Stelle ausmacht.",
+        "Lies die Anzeige laut: Würdest du dich bewerben?"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine Stellenanzeige mit höchstens 200 Wörtern. Beginne mit dem, was die Person bei uns konkret tut, nicht mit uns. Nenne drei echte Aufgaben, drei Anforderungen und was wir bieten, mit Zahlen statt Adjektiven. Keine Wörter wie „dynamisch“ oder „motiviert“.\n\nStelle: [Bezeichnung]\n\nAufgaben: [Stichpunkte]\n\nWir bieten: [Stichpunkte]",
+  "caption": "Motivierte Fachkraft für dynamisches Team gesucht? So klingt jede Anzeige. Diese Eingabe schreibt eine, in der steht, was man bei euch wirklich tut.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-27"
+}

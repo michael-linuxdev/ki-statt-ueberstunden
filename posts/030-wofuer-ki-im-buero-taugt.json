@@ -1,0 +1,43 @@
+{
+  "nr": 30,
+  "format": "Kurz erklärt",
+  "titel": "Wofür KI im Büro taugt und wofür nicht",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Das kann sie gut",
+      "punkte": [
+        "Entwürfe schreiben und Texte kürzen",
+        "Stichpunkte ordnen",
+        "Erklären, umformulieren, übersetzen",
+        "Ideen und Gliederungen vorschlagen"
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "Hier brauchst du Vorsicht",
+      "punkte": [
+        "Rechnen: Summen immer nachrechnen",
+        "Fakten, Fristen und Paragrafen",
+        "Alles, was sie über eure Firma nicht wissen kann",
+        "Entscheidungen über Menschen"
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Faustregel",
+      "text": "Die KI liefert den ersten Entwurf. Fürs Prüfen und Entscheiden bist du da."
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Entwurf von der KI, Entscheidung von dir.",
+  "eingabe": "",
+  "caption": "KI kann im Büro viel, aber nicht alles. Eine ehrliche Liste: Hier spart sie Zeit, und hier solltest du ihr nicht blind trauen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2027-01-29"
+}

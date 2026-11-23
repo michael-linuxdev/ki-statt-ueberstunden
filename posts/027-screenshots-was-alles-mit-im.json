@@ -1,0 +1,42 @@
+{
+  "nr": 27,
+  "format": "Darf ich das im Büro?",
+  "titel": "Screenshots: was alles mit im Bild ist",
+  "stempel": "erst prüfen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das Problem",
+      "text": "Ein Screenshot ist schnell gemacht und schnell hochgeladen. Auf dem Bild steht aber oft mehr als die eine Stelle, um die es dir geht."
+    },
+    {
+      "typ": "liste",
+      "kopf": "Schau vorher auf",
+      "punkte": [
+        "Namen und Mailadressen im Posteingang",
+        "Offene Tabs und Dateinamen",
+        "Kundennummern und Beträge in Tabellen",
+        "Benachrichtigungen am Bildschirmrand"
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "Besser so",
+      "punkte": [
+        "Schneide das Bild auf die Stelle zu, die du brauchst.",
+        "Übermale Namen, bevor du es hochlädst.",
+        "Oder tippe die Frage ab, ganz ohne Bild."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Erst zuschneiden, dann hochladen.",
+  "eingabe": "",
+  "caption": "Schnell ein Screenshot in die KI, und im Hintergrund stehen Kundennamen und Beträge? Darauf solltest du vor dem Hochladen schauen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2027-01-22"
+}

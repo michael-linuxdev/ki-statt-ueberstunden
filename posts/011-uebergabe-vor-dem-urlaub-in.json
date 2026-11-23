@@ -1,0 +1,35 @@
+{
+  "nr": 11,
+  "format": "Zum Speichern",
+  "titel": "Übergabe vor dem Urlaub in zehn Minuten",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Am letzten Tag vor dem Urlaub schreibst du die Übergabe zwischen Tür und Angel. Die Vertretung ruft trotzdem am zweiten Urlaubstag an."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe ordnet deine Übergabe"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Diktiere die Stichpunkte einfach ins Handy.",
+        "Ersetze Kundennamen durch Kürzel.",
+        "Geh die Übergabe einmal gemeinsam durch."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Mache aus meinen Stichpunkten eine Übergabe für meine Vertretung. Gliederung: 1. Was sicher ansteht, mit Datum, 2. Was passieren könnte und was dann zu tun ist, 3. Wo liegt was, 4. Was warten kann. Kurze Sätze, nichts erfinden. Wo eine Angabe fehlt, frage mich.\n\nMeine Stichpunkte: [hier einfügen]",
+  "caption": "Damit im Urlaub das Telefon still bleibt: Diese Eingabe macht aus deinen Stichpunkten eine Übergabe, mit der deine Vertretung wirklich arbeiten kann.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-16"
+}

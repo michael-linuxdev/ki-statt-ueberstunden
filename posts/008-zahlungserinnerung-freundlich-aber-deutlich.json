@@ -1,0 +1,35 @@
+{
+  "nr": 8,
+  "format": "Zum Speichern",
+  "titel": "Zahlungserinnerung: freundlich, aber deutlich",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Die Rechnung ist seit drei Wochen offen. Du willst das Geld, aber nicht den Kunden verlieren, und sitzt eine Viertelstunde vor einem leeren Entwurf."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe erinnert, ohne zu verärgern"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Trage Nummer, Betrag und Namen erst in deinem Mailprogramm ein.",
+        "Für die zweite Erinnerung: „Schreibe es bestimmter.“",
+        "Hänge die Rechnung noch einmal an."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine freundliche Zahlungserinnerung per E-Mail. Gehe davon aus, dass die Rechnung übersehen wurde. Nenne Rechnungsnummer, Betrag und ein neues Zahlungsziel und bitte um kurze Rückmeldung, falls etwas unklar ist. Höchstens 80 Wörter, per Sie.\n\nRechnungsnummer: [Platzhalter]\n\nBetrag: [Platzhalter]\n\nNeues Zahlungsziel: [Datum]",
+  "caption": "Offene Rechnung, und du willst weder betteln noch drohen? Diese Eingabe schreibt die Erinnerung, die freundlich bleibt und trotzdem ankommt.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-09"
+}

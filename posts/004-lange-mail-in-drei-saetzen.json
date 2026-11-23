@@ -1,0 +1,35 @@
+{
+  "nr": 4,
+  "format": "Zum Speichern",
+  "titel": "Lange Mail in drei Sätzen zusammenfassen",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Drei Bildschirmseiten Text, fünf Leute in Kopie, und irgendwo steht, was du tun sollst. Du liest zweimal und bist dir immer noch nicht sicher."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe holt das Wichtige heraus"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Das funktioniert auch mit ganzen Mailverläufen.",
+        "Entferne vorher Namen und Kundendaten.",
+        "Lies bei Fristen und Beträgen immer im Original nach."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Fasse die folgende E-Mail in höchstens drei Sätzen zusammen. Schreibe danach getrennt auf: 1. Was wird von mir erwartet? 2. Bis wann? 3. Welche Fragen bleiben offen? Wenn etwas nicht im Text steht, schreibe „steht nicht drin“.\n\nDie E-Mail: [hier einfügen, ohne Namen]",
+  "caption": "Drei Bildschirmseiten Mail und keine Ahnung, was du tun sollst? Diese Eingabe holt in einer Minute heraus, was von dir erwartet wird und bis wann.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-11-30"
+}

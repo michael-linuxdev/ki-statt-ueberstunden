@@ -1,0 +1,35 @@
+{
+  "nr": 10,
+  "format": "Zum Speichern",
+  "titel": "Abwesenheitsnotiz, die wirklich weiterhilft",
+  "stempel": "spart ca. 5 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "„Ich bin nicht im Büro.“ Schön für dich, aber wer hilft jetzt? Eine gute Abwesenheitsnotiz spart dir nach dem Urlaub viele Nachfragen."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe schreibt die Notiz"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Schreib dazu, wofür die Vertretung zuständig ist.",
+        "Nenne den ersten Tag, an dem du wieder antwortest.",
+        "Verrate nicht, wohin du fährst."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine Abwesenheitsnotiz in drei bis vier Sätzen. Sie nennt den Zeitraum, sagt, ob Mails weitergeleitet werden, und nennt für dringende Fälle eine Vertretung mit Aufgabenbereich. Freundlich, ohne Floskeln, per Sie.\n\nAbwesend: [von, bis]\n\nVertretung: [Rolle und Kontakt]\n\nWeiterleitung: [ja oder nein]",
+  "caption": "Vor den Feiertagen noch schnell die Abwesenheitsnotiz? Mit dieser Eingabe steht dort mehr als „bin nicht da“, und deine Vertretung wird nur gefragt, wofür sie zuständig ist.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-14"
+}

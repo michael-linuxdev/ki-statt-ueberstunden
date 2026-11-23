@@ -1,0 +1,35 @@
+{
+  "nr": 22,
+  "format": "Zum Speichern",
+  "titel": "Text kürzen, ohne dass etwas fehlt",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Dein Text ist doppelt so lang wie erlaubt. Du streichst hier ein Wort und da einen Satz, und nach zwanzig Minuten ist er immer noch zu lang."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe kürzt und zeigt, was fehlt"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Lass dir immer zeigen, was gestrichen wurde.",
+        "Vergleiche Zahlen und Termine mit dem Original.",
+        "Zu knapp? „Gib dem zweiten Absatz zwei Sätze mehr.“"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Kürze den folgenden Text auf höchstens [Zahl] Wörter. Alle Fakten, Zahlen und Termine bleiben erhalten. Streiche Wiederholungen, Füllwörter und Einleitungen. Liste danach auf, was du weggelassen hast, damit ich es prüfen kann.\n\nDer Text: [hier einfügen]",
+  "caption": "Zu lang für das Formular, die Mail oder die Geduld des Chefs? Diese Eingabe kürzt deinen Text und zeigt dir, was sie gestrichen hat.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-11"
+}

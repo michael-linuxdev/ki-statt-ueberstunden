@@ -1,0 +1,35 @@
+{
+  "nr": 5,
+  "format": "Zum Speichern",
+  "titel": "Absage schreiben, die freundlich bleibt",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Nein sagen fällt schwer. Also schiebst du die Absage vor dir her, und am Ende klingt sie entweder kalt oder so weich, dass niemand das Nein versteht."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe formuliert ein klares Nein"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Ein ehrlicher Grund in einem Satz reicht.",
+        "Streiche jedes „leider“, das doppelt vorkommt.",
+        "Schick die Absage bald. Warten macht sie nicht leichter."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine kurze, freundliche Absage per E-Mail. Das Nein steht klar im ersten Absatz. Nenne den Grund in einem Satz, ohne dich zu rechtfertigen, und biete eine Alternative an, falls ich eine angebe. Höchstens 90 Wörter.\n\nWorum es geht: [Anfrage in einem Satz]\n\nGrund: [hier eintragen]\n\nAlternative: [falls vorhanden]",
+  "caption": "Absagen schiebt jeder vor sich her. Mit dieser Eingabe steht in zwei Minuten ein Nein, das klar ist und trotzdem freundlich bleibt.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-02"
+}

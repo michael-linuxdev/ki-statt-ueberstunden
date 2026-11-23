@@ -1,0 +1,35 @@
+{
+  "nr": 23,
+  "format": "Zum Speichern",
+  "titel": "Sagen, dass es zu viel ist",
+  "stempel": "spart ca. 20 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Noch ein Projekt obendrauf. Du sagst Ja, weil dir im Gespräch die Worte fehlen, und ärgerst dich auf dem Heimweg."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe bereitet das Gespräch vor"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Bring die Aufgabenliste mit Zeitschätzung mit.",
+        "Frag im Gespräch: Was davon hat Vorrang?",
+        "Übe den ersten Satz einmal laut."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Hilf mir, ein Gespräch mit meiner Führungskraft vorzubereiten. Ich möchte sagen, dass meine Aufgaben nicht mehr in meine Arbeitszeit passen. Formuliere einen sachlichen Einstieg in drei Sätzen, zwei Lösungsvorschläge und je eine Antwort auf die drei wahrscheinlichsten Einwände. Ohne Vorwürfe.\n\nMeine Aufgaben: [Liste]\n\nNeu dazu kommt: [hier eintragen]",
+  "caption": "Noch eine Aufgabe obendrauf, und dir fehlen im Gespräch die Worte? Diese Eingabe bereitet dich vor: Einstieg, Vorschläge und Antworten auf die üblichen Einwände.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-13"
+}

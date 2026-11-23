@@ -1,0 +1,35 @@
+{
+  "nr": 34,
+  "format": "Zum Speichern",
+  "titel": "Einladung, auf die Leute antworten",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Du verschickst die Einladung zur Betriebsfeier, und die Hälfte meldet sich nicht zurück. Jetzt telefonierst du allen hinterher."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe schreibt die Einladung"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Datum und Anlass gehören in die Betreffzeile.",
+        "Mach die Antwort leicht: „Ein Wort genügt.“",
+        "Erinnere drei Tage vor dem Stichtag."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine Einladung per E-Mail, höchstens 100 Wörter. Die ersten zwei Zeilen nennen Anlass, Datum, Uhrzeit und Ort. Danach folgt, was die Leute erwartet, und eine klare Bitte um Zu- oder Absage bis zu einem Stichtag. Ton: freundlich und locker, per Du.\n\nAnlass: [hier eintragen]\n\nWann und wo: [hier eintragen]\n\nRückmeldung bis: [Datum]",
+  "caption": "Einladung verschickt, und keiner antwortet? Oft liegt es am Aufbau. Diese Eingabe schreibt eine Einladung, bei der die Rückmeldung leichtfällt.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-08"
+}

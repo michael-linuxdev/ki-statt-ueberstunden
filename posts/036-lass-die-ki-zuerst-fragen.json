@@ -1,0 +1,37 @@
+{
+  "nr": 36,
+  "format": "Kurz erklärt",
+  "titel": "Lass die KI zuerst Fragen stellen",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Der häufigste Fehler",
+      "text": "Du gibst zwei Zeilen ein und bekommst eine Antwort, die auf alles und nichts passt. Der KI fehlten Angaben, also hat sie geraten."
+    },
+    {
+      "typ": "text",
+      "kopf": "Der Satz, der das ändert",
+      "text": "„Stelle mir zuerst alle Fragen, die du brauchst, um die Aufgabe gut zu erledigen. Fang erst an, wenn ich geantwortet habe.“"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Besonders nützlich bei",
+      "punkte": [
+        "Texten für einen bestimmten Anlass",
+        "Plänen und Konzepten",
+        "Allem, was dir selbst noch nicht klar ist"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Erst fragen lassen, dann schreiben lassen.",
+  "eingabe": "",
+  "caption": "Ein Satz am Ende deiner Eingabe, und die Antworten werden deutlich besser: Lass die KI zuerst Fragen stellen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2027-02-12"
+}

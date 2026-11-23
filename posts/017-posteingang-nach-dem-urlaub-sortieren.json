@@ -1,0 +1,35 @@
+{
+  "nr": 17,
+  "format": "Zum Speichern",
+  "titel": "Posteingang nach dem Urlaub sortieren",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Zwei Wochen weg, 240 ungelesene Mails. Du fängst oben an, verlierst dich in Kleinkram und findest die wichtige Mail erst am Mittwoch."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe sortiert vor"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Kopiere nur Betreff und Datum, nicht die Inhalte.",
+        "Fang bei Gruppe 4 an: Löschen befreit.",
+        "Lies bei Verläufen nur die jüngste Mail."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Ich füge eine Liste von E-Mail-Betreffzeilen mit Datum ein. Sortiere sie in vier Gruppen: 1. Heute beantworten, 2. Diese Woche, 3. Nur lesen, 4. Vermutlich erledigt oder überholt. Begründe jede Zuordnung in wenigen Worten. Im Zweifel gehört eine Mail in Gruppe 2.\n\nMeine Betreffzeilen: [hier einfügen, ohne Namen]",
+  "caption": "Erster Tag nach dem Urlaub, der Posteingang quillt über. Diese Eingabe sortiert vor, damit du die wichtige Mail nicht erst am Mittwoch findest.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-30"
+}

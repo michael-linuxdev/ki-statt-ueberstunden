@@ -1,0 +1,42 @@
+{
+  "nr": 15,
+  "format": "Darf ich das im Büro?",
+  "titel": "Namen ersetzen in zwei Minuten",
+  "stempel": "erst prüfen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Die Idee",
+      "text": "Die KI braucht den Inhalt, nicht die Namen. Wer vorher Platzhalter einsetzt, kann viele Texte bearbeiten lassen, ohne Personen preiszugeben."
+    },
+    {
+      "typ": "liste",
+      "kopf": "So gehst du vor",
+      "punkte": [
+        "Kopiere den Text in ein leeres Dokument.",
+        "Ersetze jeden Namen per Suchen und Ersetzen durch „Kunde A“ oder „Frau X“.",
+        "Lösche Adressen, Telefon- und Kundennummern.",
+        "Füge erst diese Fassung in die KI ein."
+      ]
+    },
+    {
+      "typ": "liste",
+      "kopf": "Nicht vergessen",
+      "punkte": [
+        "Mail-Signaturen am Ende",
+        "Namen in Dateinamen und Betreffzeilen",
+        "Firmennamen, wenn der Vorgang vertraulich ist"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Erst ersetzen, dann einfügen.",
+  "eingabe": "",
+  "caption": "Die KI braucht den Inhalt, nicht die Namen. So machst du einen Text in zwei Minuten anonym, bevor du ihn einfügst.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#datenschutz #dsgvo #kiimbüro #büroalltag #chatgptdeutsch",
+  "datum": "2026-12-25"
+}

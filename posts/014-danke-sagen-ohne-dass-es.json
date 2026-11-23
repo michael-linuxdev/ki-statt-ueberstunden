@@ -1,0 +1,35 @@
+{
+  "nr": 14,
+  "format": "Zum Speichern",
+  "titel": "Danke sagen, ohne dass es nach Pflicht klingt",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "„Danke für die gute Zusammenarbeit“ steht in jeder Mail zum Jahresende. Gemeint ist es oft ernst, aber es liest sich wie ein Textbaustein."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe findet die richtigen Worte"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Je konkreter die Situation, desto echter der Dank.",
+        "Ändere mindestens einen Satz in deine eigenen Worte.",
+        "Ein Dank im Januar wirkt genauso."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine kurze Dankesnachricht an eine Kollegin oder einen Kollegen, höchstens 70 Wörter. Sie nennt die konkrete Situation und sagt, was die Hilfe für mich bewirkt hat. Keine Floskeln, kein übertriebenes Lob. Ton: warm und direkt, per Du.\n\nSituation: [was passiert ist]\n\nWas es mir gebracht hat: [hier eintragen]",
+  "caption": "Wem willst du dieses Jahr noch Danke sagen? Diese Eingabe hilft dir bei Worten, die nicht nach Textbaustein klingen.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-23"
+}

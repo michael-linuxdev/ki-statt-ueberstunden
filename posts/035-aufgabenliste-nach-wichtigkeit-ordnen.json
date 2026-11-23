@@ -1,0 +1,35 @@
+{
+  "nr": 35,
+  "format": "Zum Speichern",
+  "titel": "Aufgabenliste nach Wichtigkeit ordnen",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Zwanzig Aufgaben, alle dringend. Du erledigst die leichten zuerst, und die eine wichtige liegt am Freitag immer noch da."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe sortiert deine Woche"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Schreib zu jeder Aufgabe die Frist dazu.",
+        "Drei Aufgaben pro Tag sind realistisch.",
+        "Die Entscheidung triffst am Ende du."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Ordne meine Aufgaben für diese Woche. Teile sie ein in: 1. Wichtig und dringend, 2. Wichtig, aber nicht dringend, 3. Dringend, aber abgebbar, 4. Kann warten. Schlage für jeden Tag höchstens drei Aufgaben vor und sage mir, welche ich zuerst angehen sollte und warum.\n\nMeine Aufgaben mit Frist: [hier einfügen]",
+  "caption": "Zwanzig Aufgaben, alle angeblich dringend. Diese Eingabe sortiert deine Woche und sagt dir, womit du anfangen solltest.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-10"
+}

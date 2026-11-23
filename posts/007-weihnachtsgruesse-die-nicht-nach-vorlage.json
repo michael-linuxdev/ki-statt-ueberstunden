@@ -1,0 +1,35 @@
+{
+  "nr": 7,
+  "format": "Zum Speichern",
+  "titel": "Weihnachtsgrüße, die nicht nach Vorlage klingen",
+  "stempel": "spart ca. 20 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Jedes Jahr dieselbe Karte: besinnliche Feiertage und einen guten Rutsch. Der Kunde liest sie nicht einmal zu Ende."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe schreibt Grüße mit Bezug"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Ein konkreter Moment schlägt jede schöne Formulierung.",
+        "Nimm die Variante, die du auch laut sagen würdest.",
+        "Unterschreibe von Hand, wenn es eine Karte wird."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe drei Varianten für Weihnachtsgrüße an einen Geschäftskunden, jeweils höchstens 60 Wörter. Erwähne einen konkreten gemeinsamen Moment aus diesem Jahr. Keine Floskeln wie „besinnliche Feiertage“, kein Werbetext. Ton: herzlich und persönlich, per Sie.\n\nGemeinsamer Moment: [z. B. Projekt, Messe, gelöstes Problem]\n\nUnsere Branche: [hier eintragen]",
+  "caption": "Besinnliche Feiertage und guten Rutsch schreibt jeder. Diese Eingabe liefert Weihnachtsgrüße, bei denen der Kunde merkt, dass er gemeint ist.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2026-12-07"
+}

@@ -1,0 +1,35 @@
+{
+  "nr": 38,
+  "format": "Zum Speichern",
+  "titel": "Rundmail, die wirklich gelesen wird",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Du schreibst eine sorgfältige Rundmail ans ganze Team. Eine Woche später fragt jemand genau das, was im dritten Absatz stand."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe räumt die Rundmail auf"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Eine Mail, ein Thema.",
+        "Was zu tun ist, steht ganz oben.",
+        "Frag dich: Würde ein Aushang reichen?"
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Überarbeite meine Rundmail so, dass sie auch beim Überfliegen verstanden wird. Die Betreffzeile nennt, was sich ändert und ab wann. Der erste Satz sagt, wen es betrifft und was zu tun ist. Details folgen als kurze Liste. Höchstens 120 Wörter. Schlage zwei Betreffzeilen vor.\n\nMeine Mail: [hier einfügen]",
+  "caption": "Rundmails werden überflogen, nicht gelesen. Diese Eingabe baut deine so um, dass das Wichtige trotzdem ankommt.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-17"
+}

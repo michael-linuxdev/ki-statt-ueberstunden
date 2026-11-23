@@ -1,0 +1,35 @@
+{
+  "nr": 28,
+  "format": "Zum Speichern",
+  "titel": "Amtsdeutsch in einfache Worte übersetzen",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Ein Schreiben vom Amt, zwei Seiten, und nur ein einziger Satz davon betrifft dich. Aber welcher?"
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe übersetzt Behördendeutsch"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Entferne Namen, Adressen und Aktenzeichen.",
+        "Prüfe jede Frist im Original.",
+        "Bei Rechtsfragen entscheidet die Fachperson, nicht die KI."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Erkläre mir das folgende Schreiben in einfacher Sprache. Schreibe auf: 1. Worum geht es, in zwei Sätzen? 2. Was muss ich tun und bis wann? 3. Was passiert, wenn ich nichts tue? Zitiere zu jeder Frist die Stelle im Text. Wenn etwas nicht eindeutig ist, sage das.\n\nDas Schreiben: [hier einfügen, ohne Namen und Aktenzeichen]",
+  "caption": "Zwei Seiten Behördendeutsch, und du suchst den einen Satz, der dich betrifft? Diese Eingabe sagt dir, was du tun musst und bis wann.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-25"
+}

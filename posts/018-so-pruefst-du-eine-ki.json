@@ -1,0 +1,33 @@
+{
+  "nr": 18,
+  "format": "Kurz erklärt",
+  "titel": "So prüfst du eine KI-Antwort in zwei Minuten",
+  "stempel": "gut zu wissen",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "liste",
+      "kopf": "Vier schnelle Kontrollen",
+      "punkte": [
+        "Zahlen und Daten: Stimmen sie mit deiner Vorlage überein?",
+        "Namen und Anreden: richtig geschrieben?",
+        "Zusagen: Steht etwas drin, das du nicht versprochen hast?",
+        "Ton: Würdest du das so sagen?"
+      ]
+    },
+    {
+      "typ": "text",
+      "kopf": "Eine Frage, die hilft",
+      "text": "„Welche Stellen in deiner Antwort sind unsicher oder von dir ergänzt?“ Das ersetzt deine Kontrolle nicht, zeigt aber oft die schwachen Stellen."
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "schluss": "Du unterschreibst, nicht die KI.",
+  "eingabe": "",
+  "caption": "Bevor der KI-Text rausgeht: vier Kontrollen, die zusammen keine zwei Minuten dauern und dir peinliche Fehler ersparen.\n\nSpeichern und weiterschicken, wenn es jemandem im Büro hilft.\n\n#kiimbüro #künstlicheintelligenz #chatgptdeutsch #büroalltag #weiterbildung",
+  "datum": "2027-01-01"
+}

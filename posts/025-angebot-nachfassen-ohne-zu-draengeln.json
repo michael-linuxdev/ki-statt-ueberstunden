@@ -1,0 +1,35 @@
+{
+  "nr": 25,
+  "format": "Zum Speichern",
+  "titel": "Angebot nachfassen, ohne zu drängeln",
+  "stempel": "spart ca. 10 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Das Angebot ist seit zehn Tagen raus, der Kunde meldet sich nicht. „Wollte nur mal nachhaken“ klingt genau so, wie du nicht klingen willst."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe fragt nach, ohne zu betteln"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Eine konkrete Frage bekommt eher eine Antwort.",
+        "Schlag zwei Termine vor statt „bei Gelegenheit“.",
+        "Nach der zweiten Mail ohne Antwort: anrufen."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Schreibe eine kurze Nachfass-Mail zu einem Angebot, höchstens 70 Wörter, per Sie. Kein „wollte nur nachfragen“. Biete stattdessen etwas an: eine offene Frage klären, das Angebot anpassen oder ein kurzes Telefonat. Ende mit einer Frage, die sich leicht beantworten lässt.\n\nAngebot über: [Leistung]\n\nVerschickt am: [Datum]",
+  "caption": "Angebot verschickt, seitdem Funkstille? Diese Eingabe schreibt eine Nachfass-Mail, die dem Kunden etwas anbietet, statt nur nachzuhaken.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-18"
+}

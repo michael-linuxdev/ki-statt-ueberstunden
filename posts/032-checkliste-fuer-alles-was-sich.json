@@ -1,0 +1,35 @@
+{
+  "nr": 32,
+  "format": "Zum Speichern",
+  "titel": "Checkliste für alles, was sich wiederholt",
+  "stempel": "spart ca. 20 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Monatsabschluss, neue Mitarbeiterin, Messe. Jedes Mal überlegst du von vorn, was alles dazugehört, und jedes Mal fehlt etwas."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe baut die Checkliste"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Ergänze die Liste nach jedem Durchgang.",
+        "Schreib an jeden Punkt, wer zuständig ist.",
+        "Eine Seite reicht. Mehr liest niemand."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Erstelle aus meiner Beschreibung eine Checkliste zum Abhaken. Ordne die Punkte in der Reihenfolge, in der sie erledigt werden, und gruppiere sie nach „vorher“, „am Tag“ und „danach“. Schlage am Ende drei Punkte vor, die bei solchen Aufgaben oft vergessen werden.\n\nDie Aufgabe: [hier beschreiben]",
+  "caption": "Alles, was du zum dritten Mal machst, verdient eine Checkliste. Diese Eingabe baut sie dir aus einer kurzen Beschreibung.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-03"
+}

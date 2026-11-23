@@ -1,0 +1,35 @@
+{
+  "nr": 26,
+  "format": "Zum Speichern",
+  "titel": "Anleitung schreiben, die jeder versteht",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Nur du weißt, wie die Reisekostenabrechnung funktioniert. Deshalb fragt dich jeder, und in deinem Urlaub bleibt sie liegen."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe schreibt die Anleitung"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Diktiere, während du die Aufgabe erledigst.",
+        "Lass jemanden aus dem Team die Anleitung testen.",
+        "Leg sie dort ab, wo alle suchen."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Mache aus meiner Beschreibung eine Schritt-für-Schritt-Anleitung für jemanden, der die Aufgabe zum ersten Mal erledigt. Ein Schritt pro Zeile, beginnend mit einem Verb. Markiere Stellen, an denen häufig Fehler passieren, mit „Achtung“. Stelle mir am Ende Fragen zu allem, was unklar ist.\n\nSo mache ich es: [hier einfügen oder diktieren]",
+  "caption": "Es gibt diese eine Aufgabe, die nur du kannst? Diktier einmal, wie du sie erledigst. Diese Eingabe macht daraus eine Anleitung für alle anderen.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-01-20"
+}

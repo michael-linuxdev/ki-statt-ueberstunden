@@ -1,0 +1,35 @@
+{
+  "nr": 37,
+  "format": "Zum Speichern",
+  "titel": "Vorbereitung aufs Mitarbeitergespräch",
+  "stempel": "spart ca. 30 Min.",
+  "slides": [
+    {
+      "typ": "cover"
+    },
+    {
+      "typ": "text",
+      "kopf": "Das kennst du",
+      "text": "Das Jahresgespräch steht an. Du gehst ohne Notizen hinein und kommst ohne Ergebnis wieder heraus."
+    },
+    {
+      "typ": "eingabe",
+      "kopf": "Diese Eingabe bereitet dich vor"
+    },
+    {
+      "typ": "liste",
+      "kopf": "So klappt es noch besser",
+      "punkte": [
+        "Nimm die Liste aus deinem Jahresrückblick.",
+        "Ein konkreter Wunsch wird eher erfüllt als ein vager.",
+        "Schreib dir die drei Punkte auf einen Zettel."
+      ]
+    },
+    {
+      "typ": "schluss"
+    }
+  ],
+  "eingabe": "Hilf mir, mein Mitarbeitergespräch vorzubereiten. Formuliere aus meinen Stichpunkten: 1. Drei Erfolge mit Beispiel, 2. Einen Wunsch für meine Entwicklung mit Begründung, 3. Ein Thema, das ich ansprechen möchte, sachlich formuliert. Nenne mir danach drei Fragen, die mir gestellt werden könnten.\n\nMeine Stichpunkte: [hier einfügen]",
+  "caption": "Ins Mitarbeitergespräch ohne Notizen? Mit dieser Eingabe hast du drei Erfolge, einen Wunsch und ein Thema parat.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation",
+  "datum": "2027-02-15"
+}
