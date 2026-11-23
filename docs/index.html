@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI statt Überstunden: Eingaben zum Kopieren</title><meta name="description" content="Fertige KI-Eingaben für den Büroalltag zum Kopieren.">
+<link rel="icon" href="profilbild.png">
+<style>
+@font-face { font-family: Bitter; src: url('fonts/Bitter.ttf'); font-weight: 100 900; }
+@font-face { font-family: Fira; src: url('fonts/FiraSans-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: Fira; src: url('fonts/FiraSans-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: Fira; src: url('fonts/FiraSans-Bold.ttf'); font-weight: 700; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #FFFFFF; color: #17277A; font-family: Fira, system-ui, sans-serif;
+  font-size: 18px; line-height: 1.5; border-left: 10px solid #17277A; }
+main { max-width: 680px; margin: 0 auto; padding: 28px 20px 80px; }
+header p { margin: 0 0 6px; font-weight: 500; }
+h1 { font-family: Bitter, serif; font-weight: 800; font-size: clamp(38px, 10vw, 60px); line-height: 1.25;
+  letter-spacing: -.5px; margin: 0 0 18px; }
+h1 span { background: #FFE84D; padding: 1px 8px; margin-left: -8px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+h2 { font-family: Bitter, serif; font-weight: 800; font-size: 26px; line-height: 1.25; margin: 0 0 6px; }
+article { border-top: 3px solid #17277A; padding: 26px 0 30px; margin-top: 28px; }
+.meta { display: flex; justify-content: space-between; font-weight: 500; margin-bottom: 8px; }
+.rot { color: #D8342A; }
+.zettel { background: repeating-linear-gradient(#FFFFFF 0 29px, #DCE2F4 29px 31px); border-left: 5px solid #FFE84D;
+  padding-left: 16px; margin: 16px 0; white-space: pre-wrap; line-height: 31px; font-weight: 500; }
+button, .knopf { font: inherit; font-weight: 700; color: #FFFFFF; background: #17277A; border: 0; border-radius: 6px;
+  padding: 13px 20px; min-height: 48px; cursor: pointer; text-decoration: none; display: inline-block; }
+button.hell { background: #FFE84D; color: #17277A; }
+button:focus-visible, a:focus-visible { outline: 3px solid #D8342A; outline-offset: 3px; }
+a { color: #17277A; }
+.reihe { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0 14px; scroll-snap-type: x mandatory; }
+.reihe img { height: 300px; width: auto; border: 2px solid #DCE2F4; scroll-snap-align: start; }
+.knoepfe { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+pre { white-space: pre-wrap; font: inherit; font-size: 16px; background: #F3F5FC; padding: 14px; border-radius: 6px; }
+footer { margin-top: 50px; border-top: 3px solid #DCE2F4; padding-top: 18px; font-size: 16px; }
+</style></head>
+<body><main><header><p>@ki.statt.ueberstunden</p>
+<h1><span>KI statt Überstunden</span></h1>
+<p>Fertige Eingaben für ChatGPT, Claude und Co. Kopieren, eigene Angaben eintragen, früher gehen.</p></header><article id="nr2">
+<div class="meta"><span>Eingabe Nr. 2</span><span class="rot">spart ca. 20 Min.</span></div>
+<h2>Aus Stichpunkten wird ein fertiges Protokoll</h2>
+<div class="zettel" id="e2">Mache aus meinen Stichpunkten ein Besprechungsprotokoll. Gliederung: 1. Beschlüsse, 2. Aufgaben als Tabelle mit Wer, Was, Bis wann, 3. Offene Punkte. Erfinde nichts dazu. Wo etwas unklar ist oder ein Termin fehlt, schreibe „bitte klären“.
+
+Meine Stichpunkte: [hier einfügen]</div>
+<button data-kopiere="e2">Eingabe kopieren</button></article><article id="nr1">
+<div class="meta"><span>Eingabe Nr. 1</span><span class="rot">spart ca. 15 Min.</span></div>
+<h2>Unfreundliche Mail höflich beantworten</h2>
+<div class="zettel" id="e1">Du bist meine erfahrene Kollegin im Büro. Ich habe die folgende verärgerte E-Mail bekommen. Schreibe eine Antwort, die sachlich und freundlich bleibt, das Anliegen ernst nimmt und einen konkreten nächsten Schritt nennt. Höchstens 120 Wörter, keine Floskeln.
+
+Was ich zusagen kann: [hier eintragen]
+
+Die E-Mail: [hier einfügen, ohne Namen]</div>
+<button data-kopiere="e1">Eingabe kopieren</button></article><footer><p>Gib keine Namen, Kundendaten oder Passwörter in ein KI-Werkzeug ein
+und prüfe jedes Ergebnis, bevor du es verwendest.</p>
+<p><a href="https://www.instagram.com/ki.statt.ueberstunden/">@ki.statt.ueberstunden auf Instagram</a></p></footer></main><script>
+document.addEventListener('click', async (ev) => {
+  const b = ev.target.closest('[data-kopiere]');
+  if (b) {
+    const text = document.getElementById(b.dataset.kopiere).textContent;
+    try { await navigator.clipboard.writeText(text); b.textContent = 'Kopiert'; }
+    catch { b.textContent = 'Kopieren hat nicht geklappt, bitte Text markieren'; }
+    return;
+  }
+  const t = ev.target.closest('[data-teile]');
+  if (t) {
+    const urls = t.dataset.teile.split(',');
+    try {
+      const files = await Promise.all(urls.map(async (u, i) => {
+        const blob = await (await fetch(u)).blob();
+        return new File([blob], (i + 1) + '.png', { type: 'image/png' });
+      }));
+      if (navigator.canShare && navigator.canShare({ files })) { await navigator.share({ files }); }
+      else { t.textContent = 'Teilen geht hier nicht, bitte Bilder einzeln lang antippen'; }
+    } catch (err) { if (err.name !== 'AbortError') t.textContent = 'Teilen hat nicht geklappt'; }
+  }
+});
+</script></body></html>

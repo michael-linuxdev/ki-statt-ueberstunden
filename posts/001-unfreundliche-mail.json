@@ -1,0 +1,15 @@
+{
+  "nr": 1,
+  "format": "Zum Speichern",
+  "titel": "Unfreundliche Mail höflich beantworten",
+  "stempel": "spart ca. 15 Min.",
+  "slides": [
+    {"typ": "cover"},
+    {"typ": "text", "kopf": "Das kennst du", "text": "Die Mail ist unverschämt. Deine Antwort darf es nicht sein. Also formulierst du dreimal um, und der halbe Vormittag ist weg."},
+    {"typ": "eingabe", "kopf": "Diese Eingabe übernimmt den ersten Entwurf"},
+    {"typ": "liste", "kopf": "So wird die Antwort besser", "punkte": ["Schreib dazu, was du zusagen kannst und was nicht.", "Entferne vorher Namen und Kundennummern.", "Lies die Antwort gegen, bevor du sie abschickst. Du unterschreibst, nicht die KI."]},
+    {"typ": "schluss"}
+  ],
+  "eingabe": "Du bist meine erfahrene Kollegin im Büro. Ich habe die folgende verärgerte E-Mail bekommen. Schreibe eine Antwort, die sachlich und freundlich bleibt, das Anliegen ernst nimmt und einen konkreten nächsten Schritt nennt. Höchstens 120 Wörter, keine Floskeln.\n\nWas ich zusagen kann: [hier eintragen]\n\nDie E-Mail: [hier einfügen, ohne Namen]",
+  "caption": "Unverschämte Mail im Postfach? Lass dir den ersten Entwurf schreiben und prüfe nur noch, ob alles stimmt.\n\nDie Eingabe zum Kopieren findest du über den Link im Profil (Nr. 1).\n\nSpeichern, damit du sie beim nächsten Ärger-Postfach zur Hand hast.\n\n#büroalltag #kiimbüro #chatgptdeutsch #zeitsparen #büroorganisation"
+}
