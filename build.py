@@ -213,61 +213,73 @@ def tag(iso):
     return f"{WOCHENTAGE[d.weekday()]}, {d.day}.{d.month}.{d.year}"
 
 
+def tag_danach(iso):
+    return (datetime.date.fromisoformat(iso) + datetime.timedelta(days=1)).isoformat()
+
+
 STUDIO_JS = """
 const heute = new Date().toLocaleDateString('sv');
 let fertig = [];
-try { fertig = JSON.parse(localStorage.getItem('gepostet') || '[]'); } catch {}
-const alle = [...document.querySelectorAll('details[data-datum]')];
+try { fertig = JSON.parse(localStorage.getItem('gepostet2') || '[]'); } catch {}
+const aufgaben = [...document.querySelectorAll('[data-aufgabe]')]
+  .sort((a, b) => a.dataset.datum.localeCompare(b.dataset.datum));
 function zeichne() {
-  let naechster = null;
-  for (const d of alle) {
-    const ok = fertig.includes(d.dataset.nr);
-    d.classList.toggle('fertig', ok);
-    d.querySelector('[data-haken]').textContent = ok ? 'Doch nicht gepostet' : 'Als gepostet markieren';
-    if (!ok && !naechster) naechster = d;
+  let naechste = null;
+  for (const a of aufgaben) {
+    const ok = fertig.includes(a.dataset.aufgabe);
+    a.classList.toggle('fertig', ok);
+    a.querySelector('[data-haken]').textContent = ok ? 'Doch nicht gepostet' : 'Als gepostet markieren';
+    if (!ok && !naechste) naechste = a;
   }
-  alle.forEach(d => d.classList.toggle('dran', d === naechster));
+  aufgaben.forEach(a => a.classList.toggle('dran', a === naechste));
+  document.querySelectorAll('details[data-nr]').forEach(d => {
+    const teile = [...d.querySelectorAll('[data-aufgabe]')];
+    d.classList.toggle('fertig', teile.every(t => t.classList.contains('fertig')));
+    d.classList.toggle('dran', teile.includes(naechste));
+  });
   const kopf = document.getElementById('dran');
-  if (!naechster) { kopf.textContent = 'Alles gepostet. Zeit für neue Beiträge.'; return; }
-  const faellig = naechster.dataset.datum <= heute ? 'Jetzt dran' : 'Als Nächstes';
   kopf.innerHTML = '';
-  const a = document.createElement('a');
-  a.href = '#p' + naechster.dataset.nr;
-  a.textContent = faellig + ': ' + naechster.dataset.tag + ', Nr. ' + naechster.dataset.nr;
-  a.addEventListener('click', () => { naechster.open = true; });
-  kopf.append(a);
+  if (!naechste) { kopf.textContent = 'Alles gepostet. Zeit für neue Beiträge.'; return; }
+  const link = document.createElement('a');
+  link.href = '#' + naechste.id;
+  link.textContent = (naechste.dataset.datum <= heute ? 'Jetzt dran: ' : 'Als Nächstes: ') + naechste.dataset.titel;
+  link.addEventListener('click', () => { naechste.closest('details').open = true; });
+  kopf.append(link);
 }
 document.addEventListener('click', (ev) => {
   const h = ev.target.closest('[data-haken]');
   if (!h) return;
-  const nr = h.closest('details').dataset.nr;
-  fertig = fertig.includes(nr) ? fertig.filter(x => x !== nr) : [...fertig, nr];
-  try { localStorage.setItem('gepostet', JSON.stringify(fertig)); } catch {}
+  const key = h.closest('[data-aufgabe]').dataset.aufgabe;
+  fertig = fertig.includes(key) ? fertig.filter(x => x !== key) : [...fertig, key];
+  try { localStorage.setItem('gepostet2', JSON.stringify(fertig)); } catch {}
   zeichne();
 });
 zeichne();
-const offen = alle.find(d => d.classList.contains('dran'));
+const offen = document.querySelector('details.dran');
 if (offen) offen.open = true;
 """
 
 STUDIO_CSS = f"""
-#dran {{ font-family: Bitter, serif; font-weight: 800; font-size: 24px; background: {MARKER}; padding: 14px 16px; margin: 18px 0 0; }}
+#dran {{ font-family: Bitter, serif; font-weight: 800; font-size: 22px; line-height: 1.3; background: {MARKER}; padding: 14px 16px; margin: 18px 0 0; }}
 details {{ border-top: 3px solid {TINTE}; padding: 14px 0; }}
 details:first-of-type {{ margin-top: 26px; }}
 summary {{ cursor: pointer; display: grid; grid-template-columns: 7.2em 1fr; gap: 4px 10px; min-height: 44px; align-items: center; }}
 summary small {{ font-size: 16px; font-weight: 500; }}
-summary b {{ font-family: Bitter, serif; font-weight: 800; font-size: 19px; line-height: 1.25; }}
+summary b {{ font-family: Bitter, serif; font-weight: 800; font-size: 19px; line-height: 1.25; overflow-wrap: anywhere; }}
 details.fertig summary {{ opacity: .45; text-decoration: line-through; }}
 details.dran summary b {{ background: {MARKER}; padding: 0 4px; }}
-details .meta {{ margin-top: 14px; }}
+section {{ border-left: 6px solid {LINIE}; padding: 4px 0 4px 14px; margin: 18px 0; }}
+section.dran {{ border-left-color: {MARKER}; }}
+section.fertig > :not(.knoepfe:last-child) {{ opacity: .45; }}
+section h3 {{ font-family: Bitter, serif; font-weight: 800; font-size: 20px; margin: 0 0 8px; }}
 video {{ width: 100%; max-width: 270px; display: block; border: 2px solid {LINIE}; margin: 6px 0 10px; }}
 button.leer {{ background: none; color: {TINTE}; border: 2px solid {TINTE}; }}
 """
 
-
 REEL_ERSATZ = ("Zum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. "
                "Die Anleitung steht auf dem letzten Bild.",
                "Zum Kopieren: Video bei der Eingabe anhalten, Screenshot machen und den Text im Foto markieren.")
+HAKEN = '<div class="knoepfe"><button class="leer" data-haken>Als gepostet markieren</button></div>'
 
 
 def reel_block(p):
@@ -275,34 +287,42 @@ def reel_block(p):
     if not (DOCS / datei).exists():
         return ""
     text = p["caption"].replace(*REEL_ERSATZ)
-    return f"""<div class="meta"><span>Reel</span><span>Video, Hochformat</span></div>
+    return f"""<section id="a{p['nr']}r" data-aufgabe="{p['nr']}r" data-datum="{p['datum']}"
+ data-titel="{tag(p['datum'])}, Reel Nr. {p['nr']}">
+<h3>Reel am {tag(p['datum'])}</h3>
 <video src="{datei}" controls muted playsinline preload="none" poster="slides/{p['nr']:03d}/1.png"></video>
 <div class="knoepfe"><button data-teile="{datei}">Reel teilen oder sichern</button>
 <a class="knopf" href="{datei}" download="reel-{p['nr']:03d}.mp4">Reel herunterladen</a>
 <button class="hell" data-kopiere="r{p['nr']}">Reel-Text kopieren</button></div>
-<pre id="r{p['nr']}">{e(text)}</pre>"""
+<pre id="r{p['nr']}">{e(text)}</pre>{HAKEN}</section>"""
+
+
+def karussell_block(p):
+    n = len(p["slides"])
+    ordner = f"slides/{p['nr']:03d}"
+    danach = tag_danach(p["datum"])
+    bilder = "".join(f'<a href="{ordner}/{i}.png" download="{p["nr"]:03d}-{i}.png">'
+                     f'<img src="{ordner}/{i}.png" alt="Bild {i} von {n}" loading="lazy"></a>'
+                     for i in range(1, n + 1))
+    urls = ",".join(f"{ordner}/{i}.png" for i in range(1, n + 1))
+    return f"""<section id="a{p['nr']}k" data-aufgabe="{p['nr']}k" data-datum="{danach}"
+ data-titel="{tag(danach)}, Karussell Nr. {p['nr']}">
+<h3>Karussell am {tag(danach)}</h3>
+<div class="reihe">{bilder}</div>
+<div class="knoepfe"><button data-teile="{urls}">Alle {n} Bilder teilen oder sichern</button>
+<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button></div>
+<pre id="c{p['nr']}">{e(p['caption'])}</pre>{HAKEN}</section>"""
 
 
 def studio_html(posts):
     teile = ["""<header><p>Nur für dich</p><h1><span>Redaktionsplan</span></h1>
-<p>Montag, Mittwoch, Freitag. Zu jedem Beitrag gibt es ein Karussell und ein Reel. Sichern, Text kopieren, posten, abhaken.</p>
+<p>Montag, Mittwoch und Freitag das Reel, am Tag darauf das Karussell zum selben Thema. Sichern, Text kopieren, posten, abhaken.</p>
 <p id="dran"></p></header>"""]
     for p in sorted(posts, key=lambda p: p["datum"]):
-        n = len(p["slides"])
-        ordner = f"slides/{p['nr']:03d}"
-        bilder = "".join(f'<a href="{ordner}/{i}.png" download="{p["nr"]:03d}-{i}.png">'
-                         f'<img src="{ordner}/{i}.png" alt="Bild {i} von {n}" loading="lazy"></a>'
-                         for i in range(1, n + 1))
-        urls = ",".join(f"{ordner}/{i}.png" for i in range(1, n + 1))
-        teile.append(f"""<details id="p{p['nr']}" data-nr="{p['nr']}" data-datum="{p['datum']}" data-tag="{tag(p['datum'])}">
+        teile.append(f"""<details id="p{p['nr']}" data-nr="{p['nr']}">
 <summary><small>{tag(p['datum'])}</small><b>{e(p['titel'])}</b></summary>
-<div class="meta"><span>Nr. {p['nr']}, {e(p['format'])}</span><span>{n} Bilder</span></div>
-<div class="reihe">{bilder}</div>
-<div class="knoepfe"><button data-teile="{urls}">Alle Bilder teilen oder sichern</button>
-<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button></div>
-<pre id="c{p['nr']}">{e(p['caption'])}</pre>
-{reel_block(p)}
-<div class="knoepfe"><button class="leer" data-haken>Als gepostet markieren</button></div></details>""")
+<div class="meta"><span>Nr. {p['nr']}, {e(p['format'])}</span></div>
+{reel_block(p)}{karussell_block(p)}</details>""")
     teile.append('<footer><p><a href="profilbild.png" download>Profilbild herunterladen</a></p></footer>')
     return (seite("Redaktionsplan", "".join(teile), "Interner Redaktionsplan")
             .replace("<title>", '<meta name="robots" content="noindex"><title>')
@@ -311,10 +331,11 @@ def studio_html(posts):
 
 
 def plan_md(posts):
-    zeilen = ["# Redaktionsplan", "", "Rhythmus: Montag, Mittwoch, Freitag. Mo und Mi eine Eingabe zum Speichern,",
-              "Fr im Wechsel „Darf ich das im Büro?“ und „Kurz erklärt“.", "",
-              "| Datum | Nr. | Format | Titel |", "|---|---|---|---|"]
-    zeilen += [f"| {tag(p['datum'])} | {p['nr']} | {p['format']} | {p['titel']} |"
+    zeilen = ["# Redaktionsplan", "",
+              "Rhythmus: Montag, Mittwoch und Freitag das Reel, am Tag darauf das Karussell zum selben Thema.",
+              "Mo und Mi eine Eingabe zum Speichern, Fr im Wechsel „Darf ich das im Büro?“ und „Kurz erklärt“.", "",
+              "| Reel | Karussell | Nr. | Format | Titel |", "|---|---|---|---|---|"]
+    zeilen += [f"| {tag(p['datum'])} | {tag(tag_danach(p['datum']))} | {p['nr']} | {p['format']} | {p['titel']} |"
                for p in sorted(posts, key=lambda p: p["datum"])]
     return "\n".join(zeilen) + "\n"
 

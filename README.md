@@ -9,7 +9,7 @@ Bildfabrik für den Instagram-Kanal @ki.statt.ueberstunden.
 - `docs/studio.html`: Redaktionsplan mit Bildern zum Herunterladen, Beitragstexten und Abhaken
 - `REDAKTIONSPLAN.md`: derselbe Plan als Tabelle (wird von `build.py` erzeugt)
 
-Rhythmus: Montag, Mittwoch, Freitag. Jeder Beitrag trägt sein Datum im Feld `datum`.
+Rhythmus: Montag, Mittwoch, Freitag das Reel, am Tag darauf das Karussell. Jeder Beitrag trägt das Reel-Datum im Feld `datum`.
 
 Folientypen: `cover`, `text`, `liste`, `eingabe`, `schluss`.
 GitHub Pages: Branch `main`, Ordner `/docs`, Domain ki.micana.de.
