@@ -61,9 +61,8 @@ li {{ font-size: 46px; line-height: 1.34; padding: 30px 0 30px 70px; border-top:
 li:last-child {{ border-bottom: 3px solid {LINIE}; }}
 li::before {{ content: ""; position: absolute; left: 4px; top: 44px; width: 34px; height: 34px; background: {MARKER};
   border: 3px solid {TINTE}; }}
-.zettel {{ background: repeating-linear-gradient({PAPIER} 0 59px, {LINIE} 59px 62px);
-  border-left: 8px solid {MARKER}; padding: 0 0 0 36px; }}
-.zettel p {{ font-size: 37px; line-height: 62px; font-weight: 500; margin-bottom: 62px; }}
+.zettel {{ border-left: 10px solid {MARKER}; padding: 6px 0 6px 38px; }}
+.zettel p {{ font-size: 39px; line-height: 1.5; font-weight: 500; margin-bottom: 44px; }}
 .zettel p:last-child {{ margin-bottom: 0; }}
 .stempel {{ position: absolute; right: 90px; bottom: 230px; transform: rotate(-7deg); color: {STEMPEL};
   border: 7px solid {STEMPEL}; border-radius: 14px; padding: 18px 34px; font-family: Bitter, serif;
@@ -71,6 +70,11 @@ li::before {{ content: ""; position: absolute; left: 4px; top: 44px; width: 34px
 .stempel small {{ display: block; font-family: Fira, sans-serif; font-size: 26px; font-weight: 500; }}
 .schluss {{ font-family: Bitter, serif; font-weight: 800; font-size: 84px; line-height: 1.28; }}
 .schluss + p {{ font-size: 44px; line-height: 1.4; margin-top: 60px; }}
+ol {{ list-style: none; counter-reset: schritt; }}
+ol li {{ counter-increment: schritt; }}
+ol li::before {{ content: counter(schritt); background: {MARKER}; border: 0; width: 52px; height: 52px; top: 30px;
+  left: 0; font-family: Bitter, serif; font-weight: 800; font-size: 34px; display: grid; place-items: center; }}
+.hinweis {{ font-size: 40px; line-height: 1.4; margin-top: 48px; font-weight: 500; }}
 """
 
 
@@ -89,8 +93,12 @@ def slide_html(post, slide, i, n, basis):
         inhalt = f"<h2>{e(slide['kopf'])}</h2><div class='zettel'>{absatz(post['eingabe'])}</div>"
     elif typ == "schluss":
         if post["eingabe"]:
-            inhalt = (f"<div class='schluss'><span>Speichern, damit du die Eingabe wiederfindest.</span></div>"
-                      f"<p>Zum Kopieren: {DOMAIN}, Eingabe Nr. {post['nr']}.<br>Der Link steht im Profil.</p>")
+            bild = next(k for k, x in enumerate(post["slides"], 1) if x["typ"] == "eingabe")
+            inhalt = (f"<h2>So kopierst du die Eingabe</h2><ol>"
+                      f"<li>Wisch zurück zu Bild {bild} und mach einen Screenshot.</li>"
+                      f"<li>Öffne den Screenshot in deinen Fotos.</li>"
+                      f"<li>Halte den Finger auf den Text und wähle „Kopieren“.</li></ol>"
+                      f"<p class='hinweis'>Speichere den Beitrag, damit du ihn wiederfindest.</p>")
         else:
             inhalt = ("<div class='schluss'><span>Schick das jemandem, der alles einfügt.</span></div>"
                       "<p>Mehr KI fürs Büro, ehrlich getestet:<br>folge @" + KANAL + "</p>")
