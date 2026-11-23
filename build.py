@@ -165,7 +165,7 @@ document.addEventListener('click', async (ev) => {
     try {
       const files = await Promise.all(urls.map(async (u, i) => {
         const blob = await (await fetch(u)).blob();
-        return new File([blob], (i + 1) + '.png', { type: 'image/png' });
+        return new File([blob], u.split('/').slice(-2).join('-'), { type: blob.type || 'image/png' });
       }));
       if (navigator.canShare && navigator.canShare({ files })) { await navigator.share({ files }); }
       else { t.textContent = 'Teilen geht hier nicht, bitte Bilder einzeln lang antippen'; }
@@ -260,13 +260,32 @@ summary b {{ font-family: Bitter, serif; font-weight: 800; font-size: 19px; line
 details.fertig summary {{ opacity: .45; text-decoration: line-through; }}
 details.dran summary b {{ background: {MARKER}; padding: 0 4px; }}
 details .meta {{ margin-top: 14px; }}
+video {{ width: 100%; max-width: 270px; display: block; border: 2px solid {LINIE}; margin: 6px 0 10px; }}
 button.leer {{ background: none; color: {TINTE}; border: 2px solid {TINTE}; }}
 """
 
 
+REEL_ERSATZ = ("Zum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. "
+               "Die Anleitung steht auf dem letzten Bild.",
+               "Zum Kopieren: Video bei der Eingabe anhalten, Screenshot machen und den Text im Foto markieren.")
+
+
+def reel_block(p):
+    datei = f"reels/{p['nr']:03d}.mp4"
+    if not (DOCS / datei).exists():
+        return ""
+    text = p["caption"].replace(*REEL_ERSATZ)
+    return f"""<div class="meta"><span>Reel</span><span>Video, Hochformat</span></div>
+<video src="{datei}" controls muted playsinline preload="none" poster="slides/{p['nr']:03d}/1.png"></video>
+<div class="knoepfe"><button data-teile="{datei}">Reel teilen oder sichern</button>
+<a class="knopf" href="{datei}" download="reel-{p['nr']:03d}.mp4">Reel herunterladen</a>
+<button class="hell" data-kopiere="r{p['nr']}">Reel-Text kopieren</button></div>
+<pre id="r{p['nr']}">{e(text)}</pre>"""
+
+
 def studio_html(posts):
     teile = ["""<header><p>Nur für dich</p><h1><span>Redaktionsplan</span></h1>
-<p>Montag, Mittwoch, Freitag. Bilder sichern, Text kopieren, in Instagram als Karussell posten, abhaken.</p>
+<p>Montag, Mittwoch, Freitag. Zu jedem Beitrag gibt es ein Karussell und ein Reel. Sichern, Text kopieren, posten, abhaken.</p>
 <p id="dran"></p></header>"""]
     for p in sorted(posts, key=lambda p: p["datum"]):
         n = len(p["slides"])
@@ -280,9 +299,10 @@ def studio_html(posts):
 <div class="meta"><span>Nr. {p['nr']}, {e(p['format'])}</span><span>{n} Bilder</span></div>
 <div class="reihe">{bilder}</div>
 <div class="knoepfe"><button data-teile="{urls}">Alle Bilder teilen oder sichern</button>
-<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button>
-<button class="leer" data-haken>Als gepostet markieren</button></div>
-<pre id="c{p['nr']}">{e(p['caption'])}</pre></details>""")
+<button class="hell" data-kopiere="c{p['nr']}">Beitragstext kopieren</button></div>
+<pre id="c{p['nr']}">{e(p['caption'])}</pre>
+{reel_block(p)}
+<div class="knoepfe"><button class="leer" data-haken>Als gepostet markieren</button></div></details>""")
     teile.append('<footer><p><a href="profilbild.png" download>Profilbild herunterladen</a></p></footer>')
     return (seite("Redaktionsplan", "".join(teile), "Interner Redaktionsplan")
             .replace("<title>", '<meta name="robots" content="noindex"><title>')
@@ -297,6 +317,12 @@ def plan_md(posts):
     zeilen += [f"| {tag(p['datum'])} | {p['nr']} | {p['format']} | {p['titel']} |"
                for p in sorted(posts, key=lambda p: p["datum"])]
     return "\n".join(zeilen) + "\n"
+
+
+# Überschrift auf dem Titelbild verkleinern, bis das längste Wort in die Breite passt
+H1_ANPASSEN = "(() => { const h = document.querySelector('h1'); if (!h) return; const r = document.querySelector('.inhalt').getBoundingClientRect(); for (const g of [112, 104, 96, 88, 80]) { h.style.fontSize = g + 'px'; if (![...h.querySelector('span').getClientRects()].some(c => c.right > r.right + 16)) break; } })()"
+# Wahr, wenn Text über den Inhaltsbereich hinausläuft
+PASST_NICHT = "(() => { const i = document.querySelector('.inhalt'); if (!i) return false; const r = i.getBoundingClientRect(); const breit = [...i.querySelectorAll('h1 span, h2, p, li')].some(x => [...x.getClientRects()].some(c => c.right > r.right + 16)); return breit || i.scrollHeight > i.clientHeight + 1; })()"
 
 
 def main():
@@ -322,15 +348,8 @@ def main():
             quelle.write_text(markup, encoding="utf-8")
             page.goto(quelle.as_uri())
             page.evaluate("document.fonts.ready")
-            # Überschrift auf dem Titelbild verkleinern, bis das längste Wort in die Breite passt
-            page.evaluate(
-                "(() => { const h = document.querySelector('h1'); if (!h) return;"
-                " const r = document.querySelector('.inhalt').getBoundingClientRect();"
-                " for (const g of [112, 104, 96, 88, 80]) { h.style.fontSize = g + 'px';"
-                " if (![...h.querySelector('span').getClientRects()].some(c => c.right > r.right + 16)) break; } })()")
-            zu_hoch = page.evaluate(
-                "(() => { const i = document.querySelector('.inhalt');"
-                " if (!i) return false; const r = i.getBoundingClientRect(); const breit = [...i.querySelectorAll('h1 span, h2, p, li')].some(x => [...x.getClientRects()].some(c => c.right > r.right + 16)); return breit || i.scrollHeight > i.clientHeight + 1; })()")
+            page.evaluate(H1_ANPASSEN)
+            zu_hoch = page.evaluate(PASST_NICHT)
             if zu_hoch:
                 zu_lang.append(str(ziel.relative_to(DOCS)))
             ziel.parent.mkdir(parents=True, exist_ok=True)
