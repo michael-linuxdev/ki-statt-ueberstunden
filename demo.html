@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de"><meta charset="utf-8">
+<!-- Test-Format "Vorher/Nachher": ein Chat, in dem aus der Eingabe des Nutzers sichtbar das Ergebnis entsteht.
+     demo.py ruft zeige(daten, sekunde) für jedes Einzelbild auf. -->
+<style>
+@font-face { font-family: Bitter; src: url('docs/fonts/Bitter.ttf'); font-weight: 100 900; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Bold.ttf'); font-weight: 700; }
+:root { --tinte: #17277A; --marker: #FFE84D; --linie: #DCE2F4; --stempel: #D8342A; --grund: #EEF1FA; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: var(--grund); font-family: Fira, sans-serif; color: var(--tinte); position: relative; }
+.kopf { position: absolute; left: 0; right: 0; top: 0; height: 470px; background: var(--tinte); color: #fff; z-index: 2; }
+.kopf div { position: absolute; left: 70px; right: 110px; bottom: 44px; font-family: Bitter, serif; font-weight: 800; font-size: 82px; line-height: 1.12; letter-spacing: -1px; }
+.chat { position: absolute; left: 0; right: 0; top: 470px; height: 990px; overflow: hidden; }
+.innen { position: absolute; left: 60px; right: 100px; top: 0; padding: 36px 0 30px; display: flex; flex-direction: column; gap: 26px; }
+.ich { align-self: flex-end; max-width: 800px; background: var(--tinte); color: #fff; border-radius: 34px 34px 8px 34px; padding: 30px 38px; font-size: 37px; line-height: 1.42; white-space: pre-wrap; }
+.wer { font-size: 28px; font-weight: 700; margin-bottom: -12px; }
+.wer.r { align-self: flex-end; }
+.punkte { align-self: flex-start; background: #fff; border-radius: 34px 34px 34px 8px; padding: 30px 40px; display: flex; gap: 14px; }
+.punkte i { width: 20px; height: 20px; border-radius: 50%; background: var(--tinte); }
+.ki { align-self: stretch; background: #fff; border-radius: 34px 34px 34px 8px; padding: 34px 38px 38px; position: relative; }
+.ki h3 { font-family: Bitter, serif; font-weight: 800; font-size: 46px; margin-bottom: 10px; }
+.ki h4 { font-family: Bitter, serif; font-weight: 800; font-size: 36px; margin: 24px 0 8px; }
+.ki p { font-size: 35px; line-height: 1.4; padding-left: 34px; position: relative; }
+.ki p::before { content: ""; position: absolute; left: 4px; top: 17px; width: 14px; height: 14px; background: var(--tinte); }
+.ki .zeile { display: grid; grid-template-columns: 150px 1fr 250px; gap: 16px; font-size: 33px; line-height: 1.3; padding: 12px 0; border-top: 3px solid var(--linie); }
+.ki .zeile.titel { font-weight: 700; border-top: 0; font-size: 28px; padding-bottom: 6px; }
+.ki mark { background: var(--marker); color: inherit; padding: 0 6px; }
+.hinweis { font-size: 26px; font-weight: 500; opacity: .7; margin-top: -8px; }
+.stempel { position: absolute; right: 130px; top: 1385px; z-index: 3; color: var(--stempel); background: #fff; border: 7px solid var(--stempel);
+  border-radius: 14px; padding: 14px 30px; font-family: Bitter, serif; font-weight: 800; font-size: 56px; }
+.ende { position: absolute; inset: 0; background: var(--tinte); color: #fff; z-index: 4; }
+.ende div { position: absolute; left: 90px; right: 120px; top: 270px; bottom: 500px; display: flex; flex-direction: column; justify-content: center; }
+.ende b { font-family: Bitter, serif; font-weight: 800; font-size: 88px; line-height: 1.18; }
+.ende b span { background: var(--marker); color: var(--tinte); padding: 2px 14px; margin-left: -14px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.ende p { font-size: 44px; line-height: 1.4; margin-top: 56px; font-weight: 500; }
+</style>
+<body></body>
+<script>
+const klemm = (x) => Math.max(0, Math.min(1, x));
+const sanft = (x) => 1 - Math.pow(1 - klemm(x), 3);
+const feder = (x) => { x = klemm(x); return 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2); };
+const ein = (t, start, dauer = 0.3) => sanft((t - start) / dauer);
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const fett = (s) => esc(s).replace(/\[\[(.+?)\]\]/g, '<mark>$1</mark>');
+
+const TIPPEN = 1.6, DENKEN = 0.6, TAKT = 0.4, HALTEN = 2.6, ENDE = 3.0;
+function zeiten(d) {
+  const start = TIPPEN + DENKEN;
+  const fertig = start + d.antwort.length * TAKT;
+  return { start, fertig, schluss: fertig + HALTEN, gesamt: fertig + HALTEN + ENDE };
+}
+window.dauer = (d) => zeiten(d).gesamt;
+
+window.zeige = (d, t) => {
+  const z = zeiten(d);
+  // Notizen tippen sich ein; schon das erste Bild zeigt Text
+  const anteil = klemm(0.22 + 0.78 * t / TIPPEN);
+  const notiz = d.notizen.slice(0, Math.round(d.notizen.length * anteil));
+  let chat = `<div class="wer r">Meine Notizen</div><div class="ich">${esc(notiz)}</div>`;
+  if (t >= TIPPEN && t < z.start) {
+    const p = (i) => 0.3 + 0.7 * Math.abs(Math.sin((t - TIPPEN) * 9 - i * 0.9));
+    chat += `<div class="punkte">${[0, 1, 2].map(i => `<i style="opacity:${p(i)}"></i>`).join('')}</div>`;
+  }
+  if (t >= z.start) {
+    const n = Math.min(d.antwort.length, Math.floor((t - z.start) / TAKT) + 1);
+    const teile = d.antwort.slice(0, n).map((a, i) => {
+      const neu = i === n - 1 ? ein(t, z.start + i * TAKT, 0.25) : 1;
+      const stil = `style="opacity:${neu}"`;
+      if (a.typ === 'titel') return `<h3 ${stil}>${fett(a.text)}</h3>`;
+      if (a.typ === 'kopf') return `<h4 ${stil}>${fett(a.text)}</h4>`;
+      if (a.typ === 'zeile') return `<div class="zeile${a.titel ? ' titel' : ''}" ${stil}>${a.spalten.map(s => `<span>${fett(s)}</span>`).join('')}</div>`;
+      return `<p ${stil}>${fett(a.text)}</p>`;
+    }).join('');
+    chat += `<div class="wer">KI</div><div class="ki">${teile}</div>`;
+    if (t >= z.fertig) chat += `<div class="hinweis" style="opacity:${0.7 * ein(t, z.fertig, .4)}">Beispiel, von einer KI geschrieben</div>`;
+  }
+  let html = `<div class="kopf"><div>${esc(d.aufhaenger)}</div></div><div class="chat"><div class="innen">${chat}</div></div>`;
+  if (t >= z.fertig + 0.3) {
+    const s = feder((t - z.fertig - 0.3) / 0.4);
+    html += `<div class="stempel" style="transform: rotate(-7deg) scale(${2.2 - 1.2 * s})">${esc(d.stempel)}</div>`;
+  }
+  if (t >= z.schluss) {
+    const y = 100 - 100 * ein(t, z.schluss, 0.35), l = t - z.schluss;
+    html += `<div class="ende" style="transform: translateY(${y}%)"><div><b><span>${esc(d.schluss)}</span></b>
+      <p style="opacity:${ein(l, 0.6, .3)}">Jede Woche neue Eingaben fürs Büro:<br>@${d.kanal}</p></div></div>`;
+  }
+  document.body.innerHTML = html;
+  // Chat rollt mit, sobald die Antwort länger wird als der sichtbare Bereich
+  const innen = document.querySelector('.innen'), sicht = document.querySelector('.chat');
+  innen.style.top = -Math.max(0, innen.offsetHeight - sicht.offsetHeight) + 'px';
+};
+</script>
+</html>

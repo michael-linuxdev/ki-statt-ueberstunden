@@ -32,5 +32,69 @@
   ],
   "eingabe": "Mache aus meinen Stichpunkten ein Besprechungsprotokoll. Gliederung: 1. Beschlüsse, 2. Aufgaben als Tabelle mit Wer, Was, Bis wann, 3. Offene Punkte. Erfinde nichts dazu. Wo etwas unklar ist oder ein Termin fehlt, schreibe „bitte klären“.\n\nMeine Stichpunkte: [hier einfügen]",
   "caption": "Protokoll schreiben ist die Aufgabe, die nach jeder Besprechung liegen bleibt. Mit dieser Eingabe wird aus deinen Stichpunkten in zwei Minuten ein sauberes Protokoll mit Aufgabenliste.\n\nZum Kopieren: Screenshot von Bild 3 machen und den Text im Foto markieren. Die Anleitung steht auf dem letzten Bild.\n\n#protokoll #büroalltag #kiimbüro #assistenz #zeitsparen",
-  "datum": "2026-11-25"
+  "datum": "2026-11-25",
+  "demo": {
+    "aufhaenger": "Aus diesem Chaos wird ein Protokoll",
+    "notizen": "budget ok, aber nur wenn marketing unter 5k bleibt\ntom kümmert sich ums angebot, bis freitag??\nneue software: erst testen, lisa fragt die it\nnächstes mal 14.12.\nraum war wieder zu kalt",
+    "antwort": [
+      {
+        "typ": "titel",
+        "text": "Protokoll"
+      },
+      {
+        "typ": "kopf",
+        "text": "Beschlüsse"
+      },
+      {
+        "typ": "punkt",
+        "text": "Budget freigegeben, Marketing höchstens 5.000 €"
+      },
+      {
+        "typ": "punkt",
+        "text": "Neue Software wird zuerst getestet"
+      },
+      {
+        "typ": "kopf",
+        "text": "Aufgaben"
+      },
+      {
+        "typ": "zeile",
+        "titel": true,
+        "spalten": [
+          "Wer",
+          "Was",
+          "Bis wann"
+        ]
+      },
+      {
+        "typ": "zeile",
+        "spalten": [
+          "Tom",
+          "Angebot einholen",
+          "Freitag, [[bitte klären]]"
+        ]
+      },
+      {
+        "typ": "zeile",
+        "spalten": [
+          "Lisa",
+          "IT wegen Test anfragen",
+          "[[bitte klären]]"
+        ]
+      },
+      {
+        "typ": "kopf",
+        "text": "Offene Punkte"
+      },
+      {
+        "typ": "punkt",
+        "text": "Besprechungsraum zu kalt"
+      },
+      {
+        "typ": "punkt",
+        "text": "Nächster Termin: 14.12."
+      }
+    ],
+    "schluss": "Die Eingabe dazu findest du im Profil."
+  }
 }
