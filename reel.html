@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de"><meta charset="utf-8">
+<!-- Vorlage für die Reels. reels.py ruft zeige(daten, sekunde) für jedes Einzelbild auf. -->
+<style>
+@font-face { font-family: Bitter; src: url('docs/fonts/Bitter.ttf'); font-weight: 100 900; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: Fira; src: url('docs/fonts/FiraSans-Bold.ttf'); font-weight: 700; }
+:root { --tinte: #17277A; --marker: #FFE84D; --linie: #DCE2F4; --stempel: #D8342A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: var(--tinte); font-family: Fira, sans-serif; color: var(--tinte); position: relative; }
+.szene { position: absolute; inset: 0; background: #fff; border-top: 14px solid var(--tinte); }
+.szene.blau { background: var(--tinte); color: #fff; border: 0; }
+.feld { position: absolute; left: 90px; right: 120px; top: 270px; bottom: 500px; display: flex; flex-direction: column; justify-content: center; }
+.haken { font-family: Bitter, serif; font-weight: 800; line-height: 1.2; letter-spacing: -1.5px; position: relative; }
+.haken span { padding: 2px 16px; margin-left: -16px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.haken .oben { position: absolute; inset: 0; color: var(--tinte); }
+.haken .oben span { background: var(--marker); }
+.stempel { align-self: flex-end; margin: 80px 0 0; color: var(--stempel); background: #fff; border: 7px solid var(--stempel);
+  border-radius: 14px; padding: 16px 32px; font-family: Bitter, serif; font-weight: 800; font-size: 56px; }
+h2 { font-family: Bitter, serif; font-weight: 800; font-size: 66px; line-height: 1.14; margin-bottom: 46px; }
+.zettel { border-left: 10px solid var(--marker); padding: 4px 0 4px 36px; }
+.zettel p { line-height: 1.46; font-weight: 500; margin-bottom: 1em; }
+.zettel p:last-child { margin-bottom: 0; }
+ul { list-style: none; }
+li { font-size: 52px; line-height: 1.3; padding: 28px 0 28px 70px; border-top: 3px solid var(--linie); position: relative; }
+li::before { content: ""; position: absolute; left: 4px; top: 42px; width: 34px; height: 34px; background: var(--marker); border: 3px solid var(--tinte); }
+.text { font-size: 58px; line-height: 1.36; }
+.ende b { display: block; font-family: Bitter, serif; font-weight: 800; font-size: 76px; line-height: 1.22; margin-bottom: 30px; }
+.ende b i { font-style: normal; color: var(--marker); margin-right: 22px; }
+.ende p { font-size: 42px; line-height: 1.4; margin-top: 50px; font-weight: 500; }
+.ende .gross { font-size: 92px; }
+</style>
+<body></body>
+<script>
+const klemm = (x) => Math.max(0, Math.min(1, x));
+const sanft = (x) => 1 - Math.pow(1 - klemm(x), 3);
+const feder = (x) => { x = klemm(x); return 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2); };
+const ein = (t, start, dauer = 0.3) => sanft((t - start) / dauer);
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const WECHSEL = 0.35;
+
+// Zeitplan: Liste von Szenen mit Startzeit und Dauer
+function plan(d) {
+  const szenen = [{ art: 'haken', dauer: 2.3 }];
+  if (d.eingabe) {
+    szenen.push({ art: 'eingabe', dauer: WECHSEL + 0.9 + 4.3 });
+    szenen.push({ art: 'kopieren', dauer: WECHSEL + 3.1 });
+  } else {
+    for (const s of d.szenen) {
+      const n = s.punkte ? s.punkte.length : 1;
+      const zeichen = (s.punkte ? s.punkte.join('') : s.text).length;
+      szenen.push({ art: s.punkte ? 'liste' : 'text', inhalt: s, dauer: WECHSEL + 0.3 * n + Math.min(2.8, 1.0 + zeichen / 65) });
+    }
+    szenen.push({ art: 'schluss', dauer: WECHSEL + 2.6 });
+  }
+  let t = 0;
+  for (const s of szenen) { s.start = t; t += s.dauer; }
+  return szenen;
+}
+window.dauer = (d) => plan(d).reduce((a, s) => a + s.dauer, 0);
+
+function haken(d, t) {
+  const wisch = 100 - 100 * ein(t, 0.05, 0.55);
+  const zoom = 1.05 - 0.05 * ein(t, 0, 0.6);
+  const st = feder((t - 0.75) / 0.4);
+  const txt = `<span>${esc(d.aufhaenger)}</span>`;
+  return `<div class="szene blau"><div class="feld" style="transform: scale(${zoom}); transform-origin: left center">
+    <div class="haken" data-passend>${txt}<div class="oben" style="clip-path: inset(0 ${wisch}% 0 0)">${txt}</div></div>
+    <div class="stempel" style="opacity:${t >= 0.75 ? 1 : 0}; transform: rotate(-7deg) scale(${2.2 - 1.2 * st})">${esc(d.stempel)}</div>
+  </div></div>`;
+}
+function eingabe(d, t) {
+  const auf = 100 - 100 * ein(t, WECHSEL, 0.9);
+  const abs = d.eingabe.split('\n\n').map(p => `<p>${esc(p)}</p>`).join('');
+  return `<div class="feld"><h2>${esc(d.kopf)}</h2>
+    <div class="zettel" data-schrift style="clip-path: inset(0 0 ${auf}% 0)">${abs}</div></div>`;
+}
+function kopieren(d, t) {
+  const z = ['Video anhalten', 'Screenshot machen', 'Text im Foto kopieren'];
+  return `<div class="feld ende">${z.map((x, i) => `<b style="opacity:${ein(t, WECHSEL + i * 0.35, .25)}"><i>${i + 1}</i>${x}</b>`).join('')}
+    <p style="opacity:${ein(t, WECHSEL + 1.2, .3)}">Jede Woche neue Eingaben fürs Büro:<br>@${d.kanal}</p></div>`;
+}
+function liste(s, t) {
+  return `<div class="feld"><h2>${esc(s.kopf)}</h2><ul>${s.punkte.map((p, i) => {
+    const a = ein(t, WECHSEL + i * 0.3, .25);
+    return `<li style="opacity:${a}; transform: translateX(${(1 - a) * 50}px)">${esc(p)}</li>`;
+  }).join('')}</ul></div>`;
+}
+function text(s, t) {
+  const a = ein(t, WECHSEL, .35);
+  return `<div class="feld"><h2>${esc(s.kopf)}</h2><div class="text" style="opacity:${a}; transform: translateY(${(1 - a) * 30}px)">${esc(s.text)}</div></div>`;
+}
+function schluss(d, t) {
+  return `<div class="feld ende"><b class="gross">${esc(d.schluss)}</b>
+    <p style="opacity:${ein(t, WECHSEL + 0.5, .3)}">Mehr KI fürs Büro, ehrlich erklärt:<br>@${d.kanal}</p></div>`;
+}
+
+window.zeige = (d, t) => {
+  const szenen = plan(d);
+  let i = szenen.findIndex(s => t < s.start + s.dauer);
+  if (i < 0) i = szenen.length - 1;
+  let html = '';
+  // vorige Szene bleibt stehen, während die neue von unten hereinfährt
+  for (const k of [i - 1, i]) {
+    if (k < 0) continue;
+    const s = szenen[k], lokal = k === i ? t - s.start : s.dauer;
+    if (s.art === 'haken') { html += haken(d, lokal); continue; }
+    const innen = s.art === 'eingabe' ? eingabe(d, lokal) : s.art === 'kopieren' ? kopieren(d, lokal)
+      : s.art === 'liste' ? liste(s.inhalt, lokal) : s.art === 'text' ? text(s.inhalt, lokal) : schluss(d, lokal);
+    const blau = s.art === 'kopieren' || s.art === 'schluss';
+    const y = k === i ? 100 - 100 * ein(lokal, 0, WECHSEL) : 0;
+    html += `<div class="szene${blau ? ' blau' : ''}" style="transform: translateY(${y}%)">${innen}</div>`;
+  }
+  document.body.innerHTML = html;
+  // Schriftgrößen einpassen
+  document.querySelectorAll('[data-passend]').forEach(h => {
+    const rechts = h.parentElement.getBoundingClientRect().right;
+    for (const g of [128, 116, 104, 94, 84, 76]) {
+      h.style.fontSize = g + 'px';
+      const zuBreit = [...h.querySelector('span').getClientRects()].some(c => c.right > rechts + 4);
+      if (!zuBreit && h.offsetHeight <= 640) break;
+    }
+  });
+  document.querySelectorAll('[data-schrift]').forEach(z => {
+    const feld = z.parentElement;
+    for (const g of [46, 44, 42, 40, 38, 36, 34, 32]) { z.style.fontSize = g + 'px'; if (feld.scrollHeight <= feld.clientHeight) break; }
+  });
+};
+// Für die Kontrolle beim Bauen: läuft irgendwo Text aus dem Feld?
+window.passtNicht = () => [...document.querySelectorAll('.feld')].some(f => f.scrollHeight > f.clientHeight + 2);
+</script>
+</html>
